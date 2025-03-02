@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #040811;
+}
+
+header {
+    width: 100%;
+    background-color: #040811;
+    padding: 10px;
+}
+
+.barranav {
+    width: 93%; /* Ocupa casi toda la pantalla */
+    margin: 0 auto; /* Centra la barra de navegación */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribuye los elementos en los extremos */
+}
+
+.logo img {
+    width: 100px; /* Tamaño */
+}
+
+.menu {
+    list-style: none; /*Quita los puntos de la lista*/
+    display: flex; /* Hace que los elementos <li> se colocan en fila horizontal */
+    gap: 50px; /* Espacio entre los elementos del menú */
+}
+
+.menu li { /* Elementos del menu*/
+    display: inline; /* Asegura que los <li> se alineen en línea dentro de la barra*/
+}
+
+.menu a { /* Enlaces */
+    text-decoration: none; /* Quita subrayado*/
+    color: #faebf0;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s; /* Efecto suave al cambiar de color */
+}
+
+.menu a:hover {
+    color: #00e6d1; /* Color al pasar el mouse */
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .barranav {
+        flex-direction: column; /* Cambia la dirección de la barra a vertical */
+        align-items: center;
+        width: 100%;
+    }
+    
+    .menu {
+        flex-direction: column; /*Hace que las opciones del menú se acomoden una debajo de otra*/
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .logo img {
+        width: 80px; /* Ajusta para móviles */
+    }
+}
