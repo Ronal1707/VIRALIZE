@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil del Diseñador | Viralize</title>
+    <link rel="stylesheet" href="perfil_diseñador.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="barranav">
+            <div class="logo">
+                <img src="LogoViralize.png" alt="Viralize Logo">
+            </div>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="menu" id="menu">
+                <li><a href="#">SERVICIOS</a></li>
+                <li><a href="#">PORTAFOLIO</a></li>
+                <li><a href="#">INICIAR SESIÓN</a></li>
+                <li><a href="#">CONTÁCTANOS</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="profile-container">
+        <div class="profile-header">
+            <h1>Hola, [Nombre del diseñador]</h1>
+            <h2>Diseñador de Marca</h2>
+        </div>
+        
+        <div class="clients-section">
+            <h3>Clientes</h3>
+            
+            <div class="client-item">
+                <div class="client-info">
+                    <div class="client-company">NOMBRE EMPRESA 1</div>
+                    <div class="client-name">NOMBRE CLIENTE</div>
+                </div>
+                <div class="client-actions">
+                    <button class="action-btn btn-info">
+                        <i class="fas fa-info-circle"></i> INFO EMPRESA
+                    </button>
+                    <button class="action-btn btn-files">
+                        <i class="fas fa-folder-open"></i> ARCHIVOS
+                    </button>
+                    <button class="action-btn btn-chat">
+                        <i class="fas fa-comments"></i> CHAT
+                    </button>
+                    <button class="action-btn btn-notify">
+                        <i class="fas fa-bell"></i> NOTIFICAR
+                    </button>
+                </div>
+            </div>
+            
+            <div class="client-item">
+                <div class="client-info">
+                    <div class="client-company">NOMBRE EMPRESA 2</div>
+                    <div class="client-name">NOMBRE CLIENTE</div>
+                </div>
+                <div class="client-actions">
+                    <button class="action-btn btn-info">
+                        <i class="fas fa-info-circle"></i> INFO EMPRESA
+                    </button>
+                    <button class="action-btn btn-files">
+                        <i class="fas fa-folder-open"></i> ARCHIVOS
+                    </button>
+                    <button class="action-btn btn-chat">
+                        <i class="fas fa-comments"></i> CHAT
+                    </button>
+                    <button class="action-btn btn-notify">
+                        <i class="fas fa-bell"></i> NOTIFICAR
+                    </button>
+                </div>
+            </div>
+            
+            <div class="client-item">
+                <div class="client-info">
+                    <div class="client-company">NOMBRE EMPRESA 3</div>
+                    <div class="client-name">NOMBRE CLIENTE</div>
+                </div>
+                <div class="client-actions">
+                    <button class="action-btn btn-info">
+                        <i class="fas fa-info-circle"></i> INFO EMPRESA
+                    </button>
+                    <button class="action-btn btn-files">
+                        <i class="fas fa-folder-open"></i> ARCHIVOS
+                    </button>
+                    <button class="action-btn btn-chat">
+                        <i class="fas fa-comments"></i> CHAT
+                    </button>
+                    <button class="action-btn btn-notify">
+                        <i class="fas fa-bell"></i> NOTIFICAR
+                    </button>
+                </div>
+            </div>
+            
+            <div class="client-item">
+                <div class="client-info">
+                    <div class="client-company">NOMBRE EMPRESA 4</div>
+                    <div class="client-name">NOMBRE CLIENTE</div>
+                </div>
+                <div class="client-actions">
+                    <button class="action-btn btn-info">
+                        <i class="fas fa-info-circle"></i> INFO EMPRESA
+                    </button>
+                    <button class="action-btn btn-files">
+                        <i class="fas fa-folder-open"></i> ARCHIVOS
+                    </button>
+                    <button class="action-btn btn-chat">
+                        <i class="fas fa-comments"></i> CHAT
+                    </button>
+                    <button class="action-btn btn-notify">
+                        <i class="fas fa-bell"></i> NOTIFICAR
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="profile-actions">
+            <button class="profile-btn btn-edit">EDITAR PERFIL</button>
+            <button class="profile-btn btn-logout">CERRAR SESIÓN</button>
+        </div>
+        
+        <div class="contact-section">
+            <h3>CONTACTO</h3>
+            <div class="contact-info">
+                <strong>Vitalize</strong>
+                <a href="mailto:vitalize.narouetinq@gmail.com">vitalize.narouetinq@gmail.com</a><br>
+                <a href="tel:+673143646205">+67 3143646205</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        © Vitalize 2025 - Todos los derechos reservados
+    </div>
+
+    <script>
+        // Puedes añadir funcionalidad JavaScript aquí
+        document.querySelectorAll('.action-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const action = this.textContent.trim();
+                const company = this.closest('.client-item').querySelector('.client-company').textContent;
+                console.log(`${action} para ${company}`);
+                // Aquí puedes añadir la lógica para cada acción
+            });
+        });
+    </script>
+</body>
+</html>

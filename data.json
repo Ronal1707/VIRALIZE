@@ -1,0 +1,12 @@
+{
+    "menuItems": [
+      {"text": "SERVICIOS", "url": "#servicios"},
+      {"text": "PORTAFOLIO", "url": "#portafolio"},
+      {"text": "INICIAR SESIÓN", "url": "#login"},
+      {"text": "CONTÁCTANOS", "url": "#contacto"}
+    ],
+    "logo": {
+      "src": "LogoViralize.png",
+      "alt": "Viralize Logo"
+    }
+  }
