@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Usuario</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                <li class="logo"><img src="LogoViralize.png" alt="Viralize Logo"></li>  
+                <li><a href="#">SERVICIOS</a></li>
+                <li><a href="#">PORTAFOLIO</a></li>
+                <li><a href="#">INICIAR SESIÓN</a></li>
+                <li><a href="#">CONTÁCTANOS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Formulario -->
+    <div class="form-container">
+        <div class="logo-user">
+            <img src="LogoUsuario.png" alt="Logo Usuario">
+        </div>
+        <form action="#" method="POST">
+            <h2>Iniciar Sesión</h2>
+            <h5>Nuevo aqui? <a href="CreacionCuenta.html">Haz click para crear tu cuenta</a></h5>
+            <label for="username">Correo electrónico</label>
+            <input type="text" id="username" name="username" placeholder="Ingresa tu correo electrónico" required>
+
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+            <h4>¿Olvidaste tu contraseña?</h4>
+            <button type="submit">Iniciar sesión</button>
+        </form>
+    </div>
+</body>
+</html>
