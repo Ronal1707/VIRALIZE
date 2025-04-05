@@ -9,37 +9,8 @@ body {
     background-color: #000000;
     color: white;
     font-family: Arial, sans-serif;
+    padding-top: 100px;
 }
-
-/* QUITAR UNA VEZ SE UNA EL HEADER 
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #0a0b0f;
-}
-
-.navbar .logo img {
-    height: 80px;
-    max-width: 100%;
-}
-
-.navbar ul {
-    list-style: none;
-    display:flex;
-    flex-wrap: wrap;
-    gap: 60px;
-    padding: 0;
-}
-
-.navbar ul li a {
-    text-decoration: none;
-    color: rgb(175, 175, 175);
-    font-size: 1.5em;
-    font-weight: bold; 
-}*/
 
 /* Sección HERO */
 .hero {

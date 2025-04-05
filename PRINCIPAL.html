@@ -3,30 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Identidad de Marca - Viralize</title>
     <link rel="stylesheet" href="PRINCIPAL.css">
     <link rel="stylesheet" href="StylesFooter.css">
+    <link rel="stylesheet" href="Styles.css">
+
 </head>
 <body>
+    
+    <div id="header-container"></div>
+    <script>
+      fetch("Header1.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("header-container").innerHTML = data;
+        })
+        .catch(error => console.error("Error al cargar el header:", error));
+    </script>
 
-    <!-- ADJUNTAR CODIGO HEADER 
-     
-    <header class="navbar">
-        <div class="logo"> 
-            <img src="VIRALIZE/LogoViralize.png" alt="Viralize Logo"> 
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">SERVICIOS</a></li>
-                <li><a href="#">PORTAFOLIO</a></li>
-                <li><a href="#">INICIAR SESIÓN</a></li>
-                <li><a href="#">CONTÁCTANOS</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    -->
-    
     <section class="hero">
 
         <div class="hero-text">
@@ -112,7 +107,6 @@
 
     <div id="footer-container"></div>
 
-    <!-- Script para cargar el footer desde Footer.html -->
     <script>
       fetch("Footer.html")
         .then(response => response.text())
