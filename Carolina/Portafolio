@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Portafolio</title>
+  <link rel="stylesheet" href="style.css"> <!-- o tu estilo personal -->
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="PRINCIPAL.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="portafolio.html">Portafolio</a>
+      <a href="encuesta.html">Encuesta</a>
+      <a href="contacto.html">Contáctanos</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Mi Portafolio</h1>
+    <section>
+      <article>
+        <h2>Proyecto 1</h2>
+        <img src="img/proyecto1.jpg" alt="Proyecto 1">
+        <p>Descripción breve del proyecto...</p>
+      </article>
+      <!-- Más artículos si deseas -->
+    </section>
+  </main>
+</body>
+</html>
