@@ -1,3 +1,4 @@
+/* Estilos básicos */
 * {
     margin: 0;
     padding: 0;
@@ -5,11 +6,14 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     background-color: #040811;
     color: #faebf0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
-
 header {
     width: 100%;
     background-color: #040811;
@@ -100,63 +104,124 @@ header {
     transition: all 0.3s ease;
 }
 
-/* Responsividad */
-@media (max-width: 768px) {
-    .barranav {
-        width: 100%;
-        padding: 0 20px;
+
+.form-container {
+    background-color: #24316B;
+    padding: 40px 20px 20px 20px;
+    border-radius: 15%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 120px auto;
+    border: 3px solid #165751;
+    position: relative;
+}
+
+.logo-user {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+}
+
+.logo-user img {
+    width: 100%;
+    height: auto;
+}
+
+form h2 {
+    text-align: center;
+    color: #faebf0;
+}
+
+form h4 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #00E6D1;
+}
+
+form h4:hover{
+    text-decoration: underline;
+}
+
+form h5 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #faebf0;
+}
+
+form h5 a {
+    color: #00E6D1; /* Color del enlace */
+    text-decoration: none; /* Quita el subrayado por defecto */
+}
+
+form h5 a:hover {
+    text-decoration: underline; /* Añade subrayado cuando el enlace se pasa por encima */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    font-size: 16px;
+}
+
+button {
+    width: auto;
+    padding: 10px 50px;
+    background-color: #00E6D1;
+    border: none;
+    border-radius: 10px;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+button:hover {
+    background-color: #8AF4EA;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Media Queries para hacer el diseño responsive */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 15px;
+        width: 90%;
     }
-    
-    .menu {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        width: 80%;
-        max-width: 300px;
-        height: calc(100vh - 70px);
-        background-color: #040811;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
-        gap: 25px;
-        transition: left 0.3s ease;
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+
+    form h2 {
+        font-size: 20px;
     }
-    
-    .menu.active {
-        left: 0;
+
+    input, button {
+        font-size: 14px;
+        padding: 12px;
     }
-    
-    .menu li {
-        width: 100%;
-    }
-    
-    .menu a {
-        font-size: 18px;
-        padding: 10px 0;
+
+    header nav ul li {
         display: block;
-        width: 100%;
-    }
-    
-    .menu-toggle {
-        display: flex;
-    }
-    
-    .logo img {
-        width: 80px;
+        margin: 10px 0;
+        border-radius: 100%;
     }
 }
-
-@media (min-width: 769px) and (max-width: 1024px) {
-    .menu {
-        gap: 20px;
-    }
-    
-    .menu a {
-        font-size: 15px;
-    }
-}
-
-
-
-
