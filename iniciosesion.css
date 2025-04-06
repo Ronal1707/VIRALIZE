@@ -12,12 +12,99 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* centra verticalmente */
-    align-items: center;     /* centra horizontalmente */
-    margin: 2%;
+    justify-content: flex-start;
+}
+header {
+    width: 100%;
+    background-color: #040811;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos para el formulario */
+.barranav {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #faebf0;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    padding: 5px 0;
+    position: relative;
+}
+
+.menu a:hover {
+    color: #00e6d1;
+}
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #00e6d1;
+    transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* Menú hamburguesa para móviles */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #faebf0;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+
 .form-container {
     background-color: #24316B;
     padding: 40px 20px 20px 20px;
@@ -25,7 +112,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
-    margin: 30px auto;
+    margin: 120px auto;
     border: 3px solid #165751;
     position: relative;
 }
@@ -55,7 +142,7 @@ form h4 {
     color: #00E6D1;
 }
 
-form h4:hover {
+form h4:hover{
     text-decoration: underline;
 }
 
@@ -66,12 +153,12 @@ form h5 {
 }
 
 form h5 a {
-    color: #00E6D1;
-    text-decoration: none;
+    color: #00E6D1; /* Color del enlace */
+    text-decoration: none; /* Quita el subrayado por defecto */
 }
 
 form h5 a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Añade subrayado cuando el enlace se pasa por encima */
 }
 
 label {

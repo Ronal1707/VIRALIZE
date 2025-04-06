@@ -8,7 +8,7 @@ body {
     background-color: #000000;
     color: white;
     font-family: Arial, sans-serif;
-    padding-top: 100px;
+    padding: 70px 9%;
 }
 
 /* Sección HERO */
@@ -16,7 +16,7 @@ body {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    padding: 70px 8%;
+    padding: 70px 6%;
     text-align: left;
     gap:40px;
 }
@@ -27,7 +27,7 @@ body {
     font-weight: bold; 
     text-align: left; 
     max-width: 70%; 
-    line-height: 1.1;
+    line-height: 1;
 
 }
 
@@ -36,7 +36,7 @@ body {
 }
 
 .hero p {
-    font-size: 1.8vw; 
+    font-size: 1.3vw; 
     text-align: left;
     max-width: 100%;
     margin-top: 50px;
@@ -65,7 +65,7 @@ body {
 }
 
 .steps-container {
-    margin-top: 120px;
+    margin-top: 100px;
     display: flex;
     align-items: flex-start;
     justify-content:space-between;
@@ -77,13 +77,13 @@ body {
 }
 
 .steps-text li {
-    font-size: 2vw;
+    font-size: 1.5vw;
     color: #ffffff; 
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .steps-text li .highlight {
-    font-size: 3vw; 
+    font-size: 2.5vw; 
     color: #00e6d1; 
     font-weight: bold; 
 }
@@ -124,7 +124,7 @@ body {
 .identity-message h2{
     font-size: 5vw;
     font-weight: bold;
-    line-height: 1.2;
+    line-height: 1;
 }
 
 .identity-message .cta-wrapper {
@@ -156,7 +156,7 @@ body {
 }
 
 .why-choose h2{
-    font-size: 3vw;
+    font-size: 4vw;
 }
 
 .benefits-container {
@@ -195,7 +195,8 @@ body {
 
 
 .benefit p {
-    font-size: 5.2vw;          
+    font-size: 3vw;
+    line-height: 1;          
 }
 
 
