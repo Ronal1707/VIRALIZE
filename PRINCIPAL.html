@@ -15,18 +15,6 @@
 
          <div id="cookie-placeholder"></div>
 
-  <script>
-    // Cargar el HTML del componente de cookies dinámicamente
-    fetch("Cookies.html")
-      .then(response => response.text())
-      .then(html => {
-          document.getElementById('cookie-placeholder').innerHTML = html;
-          const script = document.createElement('script');
-          script.src = 'Cookies.js';
-          document.body.appendChild(script);
-      });
-  </script>
-
     <div id="header-container"></div>
     <script>
       fetch("Header1.html")
