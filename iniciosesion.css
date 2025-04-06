@@ -1,0 +1,140 @@
+/* Estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #040811;
+    color: #faebf0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centra verticalmente */
+    align-items: center;     /* centra horizontalmente */
+    margin: 2%;
+}
+
+/* Estilos para el formulario */
+.form-container {
+    background-color: #24316B;
+    padding: 40px 20px 20px 20px;
+    border-radius: 15%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 30px auto;
+    border: 3px solid #165751;
+    position: relative;
+}
+
+.logo-user {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+}
+
+.logo-user img {
+    width: 100%;
+    height: auto;
+}
+
+form h2 {
+    text-align: center;
+    color: #faebf0;
+}
+
+form h4 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #00E6D1;
+}
+
+form h4:hover {
+    text-decoration: underline;
+}
+
+form h5 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #faebf0;
+}
+
+form h5 a {
+    color: #00E6D1;
+    text-decoration: none;
+}
+
+form h5 a:hover {
+    text-decoration: underline;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    font-size: 16px;
+}
+
+button {
+    width: auto;
+    padding: 10px 50px;
+    background-color: #00E6D1;
+    border: none;
+    border-radius: 10px;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+button:hover {
+    background-color: #8AF4EA;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Media Queries para hacer el diseño responsive */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 15px;
+        width: 90%;
+    }
+
+    form h2 {
+        font-size: 20px;
+    }
+
+    input, button {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+        border-radius: 100%;
+    }
+}

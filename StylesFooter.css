@@ -2,107 +2,125 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+body {
     font-family: Arial, sans-serif;
     background-color: #111;
     color: #faebf0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-  }
-  
-  .content {
-    flex: 1;
-  }
-  
-  .footer {
-    background-color: #040811;
-    padding: 40px 20px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-  }
-  
-  .footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+}
+
+.content {
+    flex: 1; /* Esto empuja el footer hacia abajo si hay poco contenido */
+}
+
+/*  ESTILOS FOOTER */
+
+.viralize-footer {
+
+    padding: 50px 20px 20px;
+
+}
+
+.footer-content {
     max-width: 1200px;
     margin: 0 auto;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .footer-logo {
-    max-width: 100%;
-    flex: 1;
-    min-width: 250px;
-  }
-  
-  .footer-logo img {
-    width: 200px;
-    margin-bottom: 10px;
-  }
-  
-  .footer-logo h2 {
-    color: #faebf0;
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .footer-logo p {
-    font-size: 14px;
-    margin-bottom: 10px;
-    line-height: 1.5;
-  }
-  
-  .footer-logo small {
-    font-size: 12px;
-    color: #888;
-  }
-  
-  .footer-services,
-  .footer-contact {
-    max-width: 300px;
-    flex: 1;
-    min-width: 250px;
-  }
-  
-  .footer-services h3,
-  .footer-contact h3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.footer-brand h1 {
     color: #00e6d1;
-    font-size: 18px;
-    margin-bottom: 15px;
-  }
-  
-  .footer-services ul,
-  .footer-contact ul {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.footer-description {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.footer-services h2, 
+.footer-contact h2 {
+    color: #00e6d1;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.services-list {
     list-style: none;
-  }
-  
-  .footer-services ul li,
-  .footer-contact ul li {
+}
+
+.services-list li {
     margin-bottom: 10px;
-    font-size: 14px;
+    font-size: 1rem;
     display: flex;
     align-items: center;
-  }
-  
-  .footer-contact ul li i {
-    color: #ffffff;
-    margin-right: 10px; 
-    font-size: 16px;
-    min-width: 20px; 
-  }
-  
-  .footer-contact ul li a {
+}
+
+.services-list li i {
     color: #00e6d1;
+    margin-right: 10px;
+    font-size: 0.8rem;
+}
+
+.footer-contact address p {
+    margin-bottom: 10px;
+    font-style: normal;
+    display: flex;
+    align-items: center;
+}
+
+.footer-contact a {
+    color: #ffffff;
     text-decoration: none;
-  }
-  
-  .footer-contact ul li a:hover {
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.footer-contact a i {
+    margin-right: 10px;
+    width: 20px;
+}
+
+.footer-contact a:hover {
+    color: #00e6d1;
     text-decoration: underline;
-  }
-  
+}
+
+.footer-copyright {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #2a2f3d;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-brand h1 {
+        font-size: 2rem;
+    }
+    
+    .footer-services h2,
+    .footer-contact h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* TERMINA ESTILOS FOOTER */

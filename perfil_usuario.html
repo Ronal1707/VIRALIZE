@@ -8,26 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav class="barranav">
-            <div class="logo">
-                <img src="LogoViralize.png" alt="Viralize Logo">
-            </div>
-            
-            <div class="menu-toggle" id="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            
-            <ul class="menu" id="menu">
-                <li><a href="#">SERVICIOS</a></li>
-                <li><a href="#">PORTAFOLIO</a></li>
-                <li><a href="#">INICIAR SESIÓN</a></li>
-                <li><a href="#">CONTÁCTANOS</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="header-container"></div>
+    <script>
+      fetch("Header_sesion_iniciada.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("header-container").innerHTML = data;
+        })
+        .catch(error => console.error("Error al cargar el header:", error));
+    </script>
     
     <div class="profile-container">
         <div class="profile-header">
@@ -68,10 +57,15 @@
             </div>
         </div>
     </div>
-    
-    <div class="footer">
-        © Vitalize 2025 - Todos los derechos reservados
-    </div>
 
+    <script>
+        fetch("Footer.html")
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("footer-container").innerHTML = data;
+          })
+          .catch(error => console.error("Error al cargar el footer:", error));
+      </script>
+  
 </body>
 </html>
