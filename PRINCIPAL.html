@@ -8,10 +8,25 @@
     <link rel="stylesheet" href="PRINCIPAL.css">
     <link rel="stylesheet" href="StylesFooter.css">
     <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="Cookies.css">
 
 </head>
 <body>
-    
+
+         <div id="cookie-placeholder"></div>
+
+  <script>
+    // Cargar el HTML del componente de cookies dinámicamente
+    fetch("Cookies.html")
+      .then(response => response.text())
+      .then(html => {
+          document.getElementById('cookie-placeholder').innerHTML = html;
+          const script = document.createElement('script');
+          script.src = 'Cookies.js';
+          document.body.appendChild(script);
+      });
+  </script>
+
     <div id="header-container"></div>
     <script>
       fetch("Header1.html")
@@ -21,6 +36,8 @@
         })
         .catch(error => console.error("Error al cargar el header:", error));
     </script>
+
+
 
     <section class="hero">
 
