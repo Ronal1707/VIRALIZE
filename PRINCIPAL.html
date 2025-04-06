@@ -6,14 +6,24 @@
 
     <title>Identidad de Marca - Viralize</title>
     <link rel="stylesheet" href="PRINCIPAL.css">
-    <link rel="stylesheet" href="StylesFooter.css">
-    <link rel="stylesheet" href="Styles.css">
     <link rel="stylesheet" href="Cookies.css">
 
 </head>
 <body>
 
-         <div id="cookie-placeholder"></div>
+    <div id="cookie-placeholder"></div>
+
+    <script>
+      // Cargar el HTML del componente de cookies dinámicamente
+      fetch("Cookies.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById('cookie-placeholder').innerHTML = html;
+            const script = document.createElement('script');
+            script.src = 'Cookies.js';
+            document.body.appendChild(script);
+        });
+    </script>
 
     <div id="header-container"></div>
     <script>
@@ -59,7 +69,8 @@
             </div>
         </div>
         <div class="cta-wrapper">
-            <button class="cta-button">¡Quiero una marca única!</button>
+            <a href="/InicioSesion.html"><button class="cta-button">¡Quiero una marca única!</button></a>
+            
         </div>
     </section>
     <section class="seccion-con-barra">
@@ -69,7 +80,7 @@
     <section class="identity-message">
         <h2>TU IDENTIDAD DE MARCA TE DISTINGUE DE LA COMPETENCIA Y CREA CONEXIONES DURADERAS</h2>
         <div class="cta-wrapper">
-            <button class="cta-button">¡Quiero una marca única!</button>
+            <a href="/InicioSesion.html"><button class="cta-button">¡Quiero una marca única!</button></a>
         </div>
     </section>
 
@@ -95,7 +106,7 @@
 
                 <div class="benefit-content">
                 <p><span class="highlight">Logotipos, colores, Mockups y tipografías</span> ajustadas a tu negocio</p>
-                <button class="cta-button">¡Quiero una marca única!</button>
+                <a href="/InicioSesion.html"><button class="cta-button">¡Quiero una marca única!</button></a>
             </div>
             </div>
             
@@ -104,7 +115,7 @@
 
                 <div class="benefit-content">
                 <p>Tendrás una identidad visual <span class="highlight">sólida</span> que te diferencie</p>
-                <button class="cta-button">¡Quiero una marca única!</button>
+                <a href="/InicioSesion.html"><button class="cta-button">¡Quiero una marca única!</button></a>
             
             </div>
         </div>
