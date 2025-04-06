@@ -7,23 +7,6 @@ body {
     color: #333;
   }
   
-  header nav {
-    background-color: #2c3e50;
-    padding: 1em;
-    text-align: center;
-  }
-  
-  header nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-  }
-  
-  header nav a:hover {
-    color: #f1c40f;
-  }
-  
   /* === Portafolio === */
   .portafolio-container {
     max-width: 1000px;
