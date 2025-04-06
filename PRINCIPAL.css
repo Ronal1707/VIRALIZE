@@ -128,6 +128,12 @@ body {
     line-height: 1.2;
 }
 
+.identity-message .cta-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
 .identity-message .cta-button {
     font-size: 1.5em;
     padding: 15px 100px;    
@@ -139,7 +145,7 @@ body {
     border: none;
 }
 
-.identity-messages .cta-button:hover {
+.identity-message .cta-button:hover {
     background-color: #006158; /* Color cuando el cursor pasa encima */
 }
 
@@ -210,14 +216,57 @@ body {
     background-color: #24316b;
 }
 
+/*BARRA DECO*/
 .seccion-con-barra {
     position: relative;
-    height: 15vw; /* o el tamaño que querés que ocupe */
+    height: 15vw; 
   }
   
 .barra {
-    width: 20px;           /* Ancho de la barra */
-    height: 250px;         /* Altura ajustable */
-    background-color: #5675fe; /* Color azul similar al de tu imagen */
-    margin:20px auto;     /* Centrado horizontal opcional */    
+    width: 20px;          
+    height: 250px;       
+    background-color: #5675fe; 
+    margin:20px auto;     
   }  
+
+  /*RESPONSIVE*/
+  
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 8vw;
+    }
+
+    .hero p {
+        font-size: 4vw;
+    }
+
+    .steps-text li {
+        font-size: 4.5vw;
+    }
+
+    .steps-text li .highlight {
+        font-size: 5vw;
+    }
+
+    .identity-message h2 {
+        font-size: 7vw;
+    }
+
+    .why-choose h2 {
+        font-size: 6vw;
+    }
+
+    .benefit p {
+        font-size: 7vw;
+    }
+
+    .cta-button,
+    .how-it-works .cta-button {
+        font-size: 1em;
+        padding: 12px 30px;
+    }
+
+    .barra {
+        height: 100px;
+    }
+}
