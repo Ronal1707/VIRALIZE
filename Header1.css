@@ -1,14 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #040811;
-    color: #faebf0;
-}
+/*COMIENZA ESTILOS HEADER*/
 
 header {
     width: 100%;
@@ -33,8 +23,8 @@ header {
 
 .logo img {
     width: 100px;
-    height: 100px;
-    transition: transform 0.3s ease;    
+    height: auto;
+    transition: transform 0.3s ease;
 }
 
 .logo img:hover {
@@ -157,6 +147,4 @@ header {
     }
 }
 
-
-
-
+/*TERMINA ESTILOS HEADER*/
