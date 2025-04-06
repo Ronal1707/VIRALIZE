@@ -24,17 +24,45 @@
         <div class="logo-user">
             <img src="imagenes/LogoUsuario.png" alt="Logo Usuario">
         </div>
-        <form action="#" method="POST">
+        <form id="loginForm" action="#" method="POST" onsubmit="return redirectToProfile()">
             <h2>Iniciar Sesión</h2>
-            <h5>Nuevo aqui? <a href="CreacionCuenta.html">Haz click para crear tu cuenta</a></h5>
+            <h5>Nuevo aquí? <a href="CreacionCuenta.html">Haz clic para crear tu cuenta</a></h5>
             <label for="username">Correo electrónico</label>
             <input type="text" id="username" name="username" placeholder="Ingresa tu correo electrónico" required>
 
             <label for="password">Contraseña</label>
             <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+
+            <!-- Interruptor para seleccionar usuario o desarrollador -->
+            <div class="role-switch">
+                <label class="switch">
+                    <input type="checkbox" id="role-toggle">
+                    <span class="slider"></span>
+                </label>
+                <span class="role-label">Soy desarrollador</span>
+            </div>
+
             <h4>¿Olvidaste tu contraseña?</h4>
             <button type="submit">Iniciar sesión</button>
         </form>
     </div>
+
+    <script>
+        // Función para cambiar la página de destino según el estado del interruptor
+        function redirectToProfile() {
+            var isDeveloper = document.getElementById("role-toggle").checked;
+            var form = document.getElementById("loginForm");
+
+            // Redirigir al perfil de desarrollador si el interruptor está activado
+            if (isDeveloper) {
+                form.action = "perfil_diseñador.html";
+            } else {
+                form.action = "perfil_usuario.html";
+            }
+            
+            // Asegurarse de que el formulario se envíe después de cambiar el action
+            return true;
+        }
+    </script>
 </body>
 </html>
