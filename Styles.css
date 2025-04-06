@@ -15,41 +15,6 @@ body {
     justify-content: flex-start;
 }
 
-header {
-    background-color: #040811;
-    padding: 15px 0;
-    text-align: center;
-}
-
-header nav ul {
-    list-style: none;
-}
-
-header nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-.logo img {
-    width: 100px;
-    height: auto;
-    transition: transform 0.3s ease;
-}
-
-.logo img:hover {
-    transform: scale(1.05);
-}
-
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-header nav ul li a:hover {
-    color: #00e6d1;
-}
-
 .form-container {
     background-color: #24316B;
     padding: 40px 20px 20px 20px;
@@ -57,7 +22,7 @@ header nav ul li a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
-    margin: 30px auto;
+    margin: 120px auto;
     border: 3px solid #165751;
     position: relative;
 }
@@ -87,7 +52,7 @@ form h4 {
     color: #00E6D1;
 }
 
-form h4:hover{
+form h4:hover {
     text-decoration: underline;
 }
 
@@ -98,12 +63,12 @@ form h5 {
 }
 
 form h5 a {
-    color: #00E6D1; /* Color del enlace */
-    text-decoration: none; /* Quita el subrayado por defecto */
+    color: #00E6D1;
+    text-decoration: none;
 }
 
 form h5 a:hover {
-    text-decoration: underline; /* Añade subrayado cuando el enlace se pasa por encima */
+    text-decoration: underline;
 }
 
 label {
@@ -148,7 +113,7 @@ button:hover {
     gap: 10px;
 }
 
-/* Media Queries para hacer el diseño responsive */
+/* Media Queries para responsive */
 @media (max-width: 600px) {
     .form-container {
         padding: 15px;
