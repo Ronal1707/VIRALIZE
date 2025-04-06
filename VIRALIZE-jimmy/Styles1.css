@@ -16,18 +16,24 @@ body {
 }
 
 header {
+    width: 100%;
     background-color: #040811;
     padding: 15px 0;
-    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-header nav ul {
-    list-style: none;
-}
-
-header nav ul li {
-    display: inline;
-    margin: 0 15px;
+.barranav {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
 }
 
 .logo img {
@@ -40,15 +46,65 @@ header nav ul li {
     transform: scale(1.05);
 }
 
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
 }
 
-header nav ul li a:hover {
+.menu li {
+    position: relative;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #faebf0;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    padding: 5px 0;
+    position: relative;
+}
+
+.menu a:hover {
     color: #00e6d1;
 }
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #00e6d1;
+    transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* Menú hamburguesa para móviles */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #faebf0;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
 
 /* Estilos para el formulario */
 .form-container {
@@ -58,7 +114,7 @@ header nav ul li a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
-    margin: 30px auto;
+    margin: 120px auto;
     border: 3px solid #165751;
     position: relative;
 }
@@ -66,7 +122,7 @@ header nav ul li a:hover {
 .logo-user {
     position: absolute;
     top: -30px;
-    left: 50%;
+    left: 85%;
     transform: translateX(-50%);
     width: 60px;
     height: 60px;
@@ -141,6 +197,14 @@ button:hover {
     display: flex;
     justify-content: space-between;
     gap: 10px;
+}
+
+.tengocuenta{
+    background-color: #5675FE;
+}
+
+.tengocuenta:hover{
+    background-color: #2F408C;
 }
 
 /* Media Queries para hacer el diseño responsive */
