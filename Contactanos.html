@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Contacto</title>
+    <link rel="stylesheet" href="Contactanos.css">
+</head>
+<body>
+    <div id="cookie-placeholder"></div>
+
+    <div id="header-container"></div>
+    <script>
+      fetch("Header1.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("header-container").innerHTML = data;
+        })
+        .catch(error => console.error("Error al cargar el header:", error));
+    </script>
+
+    <!-- Sección de contacto -->
+    <div class="contact-section">
+        <div class="contact-logo">
+            <h1>DESEAS PONERTE EN CONTACTO CON NOSOTROS? </h1>
+            <img src="imagenes/LogoViralize.png" alt="Logo" class="contact-logo-img">
+        </div>
+        <p class="social-text">NO DUDES EN HACERLO MEDIANTE NUESTRAS REDES SOCIALES O NUESTRO CORREO/NÚMERO DE CONTACTO</p>
+        <div class="social-media-grid">
+            <div class="social-item">
+                <img src="imagenes/LogoFacebook.png" alt="Facebook">
+                <span>Viralize.com</span>
+            </div>
+            <div class="social-item">
+                <img src="imagenes/LogoLinkedin.png" alt="LinkedIn">
+                <span>Viralize</span>
+            </div>
+            <div class="social-item">
+                <img src="imagenes/LogoInstagram.png" alt="Instagram">
+                <span>Viralize</span>
+            </div>
+            <div class="social-item">
+                <img src="imagenes/LogoGmail.png" alt="Gmail">
+                <span>viralize.marqueting@gmail.com</span>
+            </div>
+            <div class="social-item">
+                <img src="imagenes/LogoX.png" alt="X">
+                <span>@Viralize</span>
+            </div>
+            <div class="social-item">
+                <img src="imagenes/LogoWhatsapp.png" alt="Whatsapp">
+                <span>+57 3142646205</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+
+    <script>
+      fetch("Footer.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("footer-container").innerHTML = data;
+        })
+        .catch(error => console.error("Error al cargar el footer:", error));
+    </script>
+</body>
+</html>
