@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Portafolio</title>
+  <link rel="stylesheet" href="Portafolio.css"> <!-- o tu estilo personal -->
+</head>
+<body>
+  <div id="header-container"></div>
+  <script>
+    fetch("Header1.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header-container").innerHTML = data;
+      })
+      .catch(error => console.error("Error al cargar el header:", error));
+  </script>
+
+  <main>
+    <h1>Mi Portafolio</h1>
+    <section>
+      <article>
+        <h2>Proyecto 1</h2>
+        <img src="img/proyecto1.jpg" alt="Proyecto 1">
+        <p>Descripción breve del proyecto...</p>
+      </article>
+      <!-- Más artículos si deseas -->
+    </section>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script>
+    fetch("Footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer-container").innerHTML = data;
+      })
+      .catch(error => console.error("Error al cargar el footer:", error));
+  </script>
+</body>
+</html>

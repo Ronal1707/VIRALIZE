@@ -1,0 +1,78 @@
+/* === Estilos generales === */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  /* === Portafolio === */
+  .portafolio-container {
+    max-width: 1000px;
+    margin: 2em auto;
+    padding: 1em;
+  }
+  
+  .portafolio-container h1 {
+    text-align: center;
+    color: #2c3e50;
+  }
+  
+  .proyecto {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+    padding: 1em;
+    margin-bottom: 1.5em;
+    display: flex;
+    gap: 1em;
+  }
+  
+  .proyecto img {
+    max-width: 200px;
+    border-radius: 10px;
+  }
+  
+  .proyecto-info {
+    flex: 1;
+  }
+  
+  /* === Encuesta === */
+  form {
+    max-width: 600px;
+    margin: 2em auto;
+    padding: 2em;
+    background-color: white;
+    box-shadow: 0 0 10px #ccc;
+    border-radius: 10px;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 1em;
+    font-weight: bold;
+  }
+  
+  form select, 
+  form textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin-top: 0.3em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  form button {
+    background-color: #2c3e50;
+    color: white;
+    padding: 0.7em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #34495e;
+  }
+  

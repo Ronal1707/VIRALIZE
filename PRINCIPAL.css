@@ -1,0 +1,272 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding-top: 100px;
+}
+
+/* Sección HERO */
+.hero {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 70px 8%;
+    text-align: left;
+    gap:40px;
+}
+
+
+.hero h1 {
+    font-size: 5vw; 
+    font-weight: bold; 
+    text-align: left; 
+    max-width: 70%; 
+    line-height: 1.1;
+
+}
+
+.hero-text h1 .highlight {
+    color: #00e6d1;
+}
+
+.hero p {
+    font-size: 1.8vw; 
+    text-align: left;
+    max-width: 100%;
+    margin-top: 50px;
+}
+
+.hero-text p .highlight {
+    color: #5675fe;
+}
+
+.hero-image {
+
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+}
+
+/* Sección ¿Cómo funciona? */
+.how-it-works {
+    text-align: center;
+    padding: 70px 8%;
+}
+
+.how-it-works h2 {
+    font-weight: bold; 
+    font-size: 4vw; 
+}
+
+.steps-container {
+    margin-top: 120px;
+    display: flex;
+    align-items: flex-start;
+    justify-content:space-between;
+}
+
+.steps-text {
+    max-width: 50%;
+    text-align: left;
+}
+
+.steps-text li {
+    font-size: 2vw;
+    color: #ffffff; 
+    margin-bottom: 50px;
+}
+
+.steps-text li .highlight {
+    font-size: 3vw; 
+    color: #00e6d1; 
+    font-weight: bold; 
+}
+
+.steps-image img{
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+}
+
+.cta-wrapper {
+    display: flex;
+    justify-content:flex-end; 
+    margin-top: 40px;
+}
+
+.how-it-works .cta-button {
+    font-size: 1vw;
+    padding: 15px 100px;    
+    background-color: #5675fe; 
+    color: #ffffff;         
+    border-radius: 20px;
+    cursor: pointer;  /* Manito al pasar el cursor */
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.how-it-works .cta-button:hover {
+    background-color: #24316b; /* Color cuando el cursor pasa encima */
+}
+
+/* Mensaje Identidad*/
+.identity-message {
+    text-align: center;  
+    padding: 100px 8%;   
+}
+
+.identity-message h2{
+    font-size: 5vw;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.identity-message .cta-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.identity-message .cta-button {
+    font-size: 1.5em;
+    padding: 15px 100px;    
+    background-color: #00e6d1; 
+    color: #000000;         
+    border-radius: 20px;
+    cursor: pointer;  /* Manito al pasar el cursor */
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.identity-message .cta-button:hover {
+    background-color: #006158; /* Color cuando el cursor pasa encima */
+}
+
+/* Sección "¿Por qué escoger Viralize?" con imágenes en columna */
+
+.why-choose{
+    text-align: center;                
+    padding: 100px 8%;
+}
+
+.why-choose h2{
+    font-size: 3vw;
+}
+
+.benefits-container {
+    display: flex;
+    flex-direction: column;  /* Cada bloque va uno debajo del otro */
+    gap: 80px;
+    margin-top: 60px;
+}
+
+.benefit {
+    display: flex;          
+    align-items: center;      
+    gap: 80px;                   
+    text-align: left;          
+    margin-bottom: 100px; 
+}
+
+.benefit img {
+    width: 100%; 
+    max-width: 800px;            
+    height: auto;
+}
+
+.benefit-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:30px;
+    text-align: left;
+    max-width: 600px;
+}
+
+.benefit-content .highlight{
+    color: #00e6d1; 
+}
+
+
+.benefit p {
+    font-size: 5.2vw;          
+}
+
+
+/* Botón CTA */
+.cta-button {
+    padding: 15px 100px;
+    background-color: #5675fe;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1vw;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #24316b;
+}
+
+/*BARRA DECO*/
+.seccion-con-barra {
+    position: relative;
+    height: 15vw; 
+  }
+  
+.barra {
+    width: 20px;          
+    height: 250px;       
+    background-color: #5675fe; 
+    margin:20px auto;     
+  }  
+
+  /*RESPONSIVE*/
+  
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 8vw;
+    }
+
+    .hero p {
+        font-size: 4vw;
+    }
+
+    .steps-text li {
+        font-size: 4.5vw;
+    }
+
+    .steps-text li .highlight {
+        font-size: 5vw;
+    }
+
+    .identity-message h2 {
+        font-size: 7vw;
+    }
+
+    .why-choose h2 {
+        font-size: 6vw;
+    }
+
+    .benefit p {
+        font-size: 7vw;
+    }
+
+    .cta-button,
+    .how-it-works .cta-button {
+        font-size: 1em;
+        padding: 12px 30px;
+    }
+
+    .barra {
+        height: 100px;
+    }
+}

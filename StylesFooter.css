@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #faebf0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1; /* Esto empuja el footer hacia abajo si hay poco contenido */
+}
+
+/*  ESTILOS FOOTER */
+
+.viralize-footer {
+
+    padding: 50px 20px 20px;
+
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.footer-brand h1 {
+    color: #00e6d1;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.footer-description {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.footer-services h2, 
+.footer-contact h2 {
+    color: #00e6d1;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.services-list {
+    list-style: none;
+}
+
+.services-list li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.services-list li i {
+    color: #00e6d1;
+    margin-right: 10px;
+    font-size: 0.8rem;
+}
+
+.footer-contact address p {
+    margin-bottom: 10px;
+    font-style: normal;
+    display: flex;
+    align-items: center;
+}
+
+.footer-contact a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.footer-contact a i {
+    margin-right: 10px;
+    width: 20px;
+}
+
+.footer-contact a:hover {
+    color: #00e6d1;
+    text-decoration: underline;
+}
+
+.footer-copyright {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #2a2f3d;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-brand h1 {
+        font-size: 2rem;
+    }
+    
+    .footer-services h2,
+    .footer-contact h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* TERMINA ESTILOS FOOTER */
