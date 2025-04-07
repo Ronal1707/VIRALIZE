@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing de Marca</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #ffffff;
+            background-color: #000000;
+            padding-top: 100px; /* Añadido para espacio del header */
+        }
+        h1 {
+            color: #00e6d1;
+            text-align: center;
+            margin-bottom: 30px;
+            margin-top: 0; /* Asegura que no haya margen superior adicional */
+        }
+        .form-section {
+            background-color: #060025;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #00e6d1;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        textarea,
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #6b6b6b;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+        textarea {
+            min-height: 80px;
+        }
+        .file-upload {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            border: 2px dashed #ccc;
+            text-align: center;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto 0;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .note {
+            font-size: 14px;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        #header-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-container"></div>
+    <script>
+      fetch("Header_sesion_iniciada.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("header-container").innerHTML = data;
+        })
+        .catch(error => console.error("Error al cargar el header:", error));
+    </script>
+
+
+    <h1>Briefing para Manual de Marca</h1>
+    
+    <form action="#" method="post" enctype="multipart/form-data">
+        <div class="form-section">
+            <h2>1. Esencia de la Marca</h2>
+            <label for="palabras-clave">¿Qué 3 palabras definen tu marca?</label>
+            <input type="text" id="palabras-clave" name="palabras-clave" placeholder="Ej: Innovación, Confianza, Sostenibilidad" required>
+            
+            <label for="diferencial">¿Qué hace única a tu marca?</label>
+            <textarea id="diferencial" name="diferencial" required></textarea>
+            
+            <label for="emocion">¿Qué emoción debe transmitir?</label>
+            <input type="text" id="emocion" name="emocion" placeholder="Ej: Confianza, Diversión, Sofisticación" required>
+        </div>
+        
+        <div class="form-section">
+            <h2>2. Público Objetivo</h2>
+            <label for="publico">¿A quién quieres llegar? (edad, intereses, estilo de vida)</label>
+            <textarea id="publico" name="publico" required></textarea>
+            
+            <label for="percepcion">¿Cómo quieres que te perciban?</label>
+            <input type="text" id="percepcion" name="percepcion" placeholder="Ej: Profesional, Accesible, Premium" required>
+        </div>
+        
+        <div class="form-section">
+            <h2>3. Elementos Visuales</h2>
+            <label>Sube tus archivos actuales (logo, imágenes, etc.)</label>
+            <div class="file-upload">
+                <input type="file" id="archivos" name="archivos[]" multiple accept="image/*,.pdf,.ai,.eps,.psd">
+                <p class="note">Formatos aceptados: JPG, PNG, PDF, AI, EPS, PSD (Máx. 10MB cada archivo)</p>
+            </div>
+            
+            <label for="elementos-actuales">Describe tus elementos actuales (qué te gusta/no te gusta)</label>
+            <textarea id="elementos-actuales" name="elementos-actuales" placeholder="Ej: 'El logo actual es muy complejo', 'Me gustan estos colores pero no la tipografía'"></textarea>
+            
+            <label for="referencias">¿Tienes ejemplos de marcas que te inspiren? (URL o descripción)</label>
+            <textarea id="referencias" name="referencias"></textarea>
+        </div>
+        
+        <div class="form-section">
+            <h2>4. Aplicaciones Prácticas</h2>
+            <label for="usos">¿Dónde se usará principalmente la marca?</label>
+            <textarea id="usos" name="usos" placeholder="Ej: Redes sociales, página web, packaging, uniformes" required></textarea>
+            
+            <label for="variantes">¿Necesitas variantes del logo? (ej: para fondos oscuros, iconos, etc.)</label>
+            <input type="text" id="variantes" name="variantes">
+        </div>
+        
+        <div class="form-section">
+            <h2>5. Competencia</h2>
+            <label for="competencia1">Marca competidora #1:</label>
+            <input type="text" id="competencia1" name="competencia1" placeholder="Nombre de la marca">
+            
+            <label for="competencia2">Marca competidora #2:</label>
+            <input type="text" id="competencia2" name="competencia2" placeholder="Nombre de la marca">
+            
+            <label for="analisis-competencia">¿Qué hacen bien/mal en su identidad visual?</label>
+            <textarea id="analisis-competencia" name="analisis-competencia"></textarea>
+        </div>
+        
+        <div class="form-section">
+            <h2>Bonus Creativo</h2>
+            <label for="metafora">Si tu marca fuera un animal/color/música, ¿cuál sería y por qué?</label>
+            <textarea id="metafora" name="metafora" placeholder="Ej: Un águila por la visión estratégica, azul por la confianza, jazz por la creatividad"></textarea>
+            <p class="note">Esta pregunta nos ayuda a entender la personalidad de tu marca de forma creativa</p>
+        </div>
+        
+        <button type="submit">Enviar Briefing</button>
+    </form>
+</body>
+</html>
