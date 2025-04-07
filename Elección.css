@@ -118,6 +118,14 @@
     margin: 0 auto;
   }
 
+  .imagen-grande.seleccionada {
+    border: 5px solid #00e6d1;
+    box-shadow: 0 0 15px #00e6d1;
+    border-radius: 10px;
+  }
+  
+
+  
   .visor {
     display: flex;
     flex-direction: column;

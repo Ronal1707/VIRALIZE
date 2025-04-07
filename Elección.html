@@ -56,7 +56,6 @@
   </section>
   
   <script>
-    // Lista de imágenes
     const imagenes = [
       "imagenes/OPC1_PREG1.jpg",
       "imagenes/OPC2_PREG1.avif",
@@ -65,16 +64,22 @@
     ];
   
     let indiceActual = 0;
+    let imagenSeleccionada = null;
   
     function mostrarImagen() {
-        const img = document.getElementById("imagen-activa");
-        img.style.opacity = 0;
-        setTimeout(() => {
-         img.src = imagenes[indiceActual];
-            img.style.opacity = 1;
-         }, 200);
+      const img = document.getElementById("imagen-activa");
+  
+      // Al cambiar de imagen, quitar selección visual y lógica
+      img.classList.remove("seleccionada");
+      imagenSeleccionada = null;
+  
+      // Transición suave
+      img.style.opacity = 0;
+      setTimeout(() => {
+        img.src = imagenes[indiceActual];
+        img.style.opacity = 1;
+      }, 200);
     }
-
   
     function anteriorImagen() {
       indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
@@ -87,14 +92,25 @@
     }
   
     function seleccionarImagen() {
-        const seleccionada = imagenes[indiceActual];
-        alert("Has seleccionado: " + seleccionada);
-        document.getElementById("siguiente-paso").scrollIntoView({ behavior: 'smooth' });
+      const img = document.getElementById("imagen-activa");
+  
+      // Marcar visualmente
+      img.classList.add("seleccionada");
+  
+      // Guardar selección internamente
+      imagenSeleccionada = imagenes[indiceActual];
+  
+      // Ir al siguiente paso (si existe)
+      const pasoSiguiente = document.getElementById("siguiente-paso");
+      if (pasoSiguiente) {
+        pasoSiguiente.scrollIntoView({ behavior: 'smooth' });
+      }
     }
-
-    // Asegura que la imagen inicial se cargue
+  
     window.onload = mostrarImagen;
   </script>
+  
+  
 
     <section class="texto-secundario">
         <h3>
