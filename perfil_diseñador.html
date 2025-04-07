@@ -33,13 +33,15 @@
                     <div class="client-name">NOMBRE CLIENTE</div>
                 </div>
                 <div class="client-actions">
-                    <button class="action-btn btn-info">
-                        <i class="fas fa-info-circle"></i> INFO EMPRESA
-                    </button>
+                    <a href="fomulario_usuario.html">
+                        <button class="action-btn btn-info">
+                            <i class="fas fa-info-circle"></i> INFO EMPRESA
+                        </button>
+                    </a>
                     <button class="action-btn btn-files">
                         <i class="fas fa-folder-open"></i> ARCHIVOS
                     </button>
-                    <button class="action-btn btn-chat">
+                    <button class="action-btn btn-chat" id="chatBtn">
                         <i class="fas fa-comments"></i> CHAT
                     </button>
                     <button class="action-btn btn-notify">
@@ -54,13 +56,15 @@
                     <div class="client-name">NOMBRE CLIENTE</div>
                 </div>
                 <div class="client-actions">
-                    <button class="action-btn btn-info">
-                        <i class="fas fa-info-circle"></i> INFO EMPRESA
-                    </button>
+                    <a href="fomulario_usuario.html">
+                        <button class="action-btn btn-info">
+                            <i class="fas fa-info-circle"></i> INFO EMPRESA
+                        </button>
+                    </a>
                     <button class="action-btn btn-files">
                         <i class="fas fa-folder-open"></i> ARCHIVOS
                     </button>
-                    <button class="action-btn btn-chat">
+                    <button class="action-btn btn-chat" id="chatBtn">
                         <i class="fas fa-comments"></i> CHAT
                     </button>
                     <button class="action-btn btn-notify">
@@ -75,13 +79,15 @@
                     <div class="client-name">NOMBRE CLIENTE</div>
                 </div>
                 <div class="client-actions">
-                    <button class="action-btn btn-info">
-                        <i class="fas fa-info-circle"></i> INFO EMPRESA
-                    </button>
+                    <a href="fomulario_usuario.html">
+                        <button class="action-btn btn-info">
+                            <i class="fas fa-info-circle"></i> INFO EMPRESA
+                        </button>
+                    </a>
                     <button class="action-btn btn-files">
                         <i class="fas fa-folder-open"></i> ARCHIVOS
                     </button>
-                    <button class="action-btn btn-chat">
+                    <button class="action-btn btn-chat" id="chatBtn">
                         <i class="fas fa-comments"></i> CHAT
                     </button>
                     <button class="action-btn btn-notify">
@@ -96,13 +102,15 @@
                     <div class="client-name">NOMBRE CLIENTE</div>
                 </div>
                 <div class="client-actions">
-                    <button class="action-btn btn-info">
-                        <i class="fas fa-info-circle"></i> INFO EMPRESA
-                    </button>
+                    <a href="fomulario_usuario.html">
+                        <button class="action-btn btn-info">
+                            <i class="fas fa-info-circle"></i> INFO EMPRESA
+                        </button>
+                    </a>
                     <button class="action-btn btn-files">
                         <i class="fas fa-folder-open"></i> ARCHIVOS
                     </button>
-                    <button class="action-btn btn-chat">
+                    <button class="action-btn btn-chat" id="chatBtn">
                         <i class="fas fa-comments"></i> CHAT
                     </button>
                     <button class="action-btn btn-notify">
@@ -116,31 +124,92 @@
             <button class="profile-btn btn-edit">EDITAR PERFIL</button>
             <button class="profile-btn btn-logout">CERRAR SESIÓN</button>
         </div>
-        
-        <div class="contact-section">
-            <h3>CONTACTO</h3>
-            <div class="contact-info">
-                <strong>Vitalize</strong>
-                <a href="mailto:vitalize.narouetinq@gmail.com">vitalize.narouetinq@gmail.com</a><br>
-                <a href="tel:+673143646205">+67 3143646205</a>
-            </div>
+    
+    <!-- Overlay de carga de archivos -->
+    <div class="overlay" id="fileOverlay">
+        <div class="overlay-content">
+        <h3>Subir Archivos</h3>
+        <input type="file" id="fileInput" multiple><br><br>
+        <button onclick="subirArchivos()" style="padding: 10px 15px; background: #28a745; color: white; border: none; border-radius: 5px; margin-right: 10px;">Subir</button>
+        <button onclick="cerrarOverlay()" style="padding: 10px 15px; background: #dc3545; color: white; border: none; border-radius: 5px;">Cerrar</button>
         </div>
     </div>
     
-    <div class="footer">
-        © Vitalize 2025 - Todos los derechos reservados
+
+    <!-- Caja del chat -->
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+        Chat con el Diseñador
+        <button onclick="cerrarChat()">&times;</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+        <p><strong>Diseñador:</strong> ¡Hola! ¿En qué puedo ayudarte?</p>
+        </div>
+        <input type="text" placeholder="Escribe un mensaje..." onkeydown="enviarMensaje(event)">
     </div>
 
     <script>
-        // Puedes añadir funcionalidad JavaScript aquí
-        document.querySelectorAll('.action-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const action = this.textContent.trim();
-                const company = this.closest('.client-item').querySelector('.client-company').textContent;
-                console.log(`${action} para ${company}`);
-                // Aquí puedes añadir la lógica para cada acción
-            });
+        // Overlay
+        document.querySelector(".btn-files").addEventListener("click", () => {
+            document.getElementById("fileOverlay").style.display = "flex";
         });
+
+        function cerrarOverlay() {
+            document.getElementById("fileOverlay").style.display = "none";
+        }
+
+        // Chat
+        const chatBtn = document.getElementById("chatBtn");
+        const chatBox = document.getElementById("chatBox");
+
+        chatBtn.addEventListener("click", () => {
+            chatBox.style.display = "flex";
+        });
+
+        function subirArchivos() {
+            const input = document.getElementById("fileInput");
+            const archivos = input.files;
+
+            if (archivos.length === 0) {
+                alert("Por favor selecciona al menos un archivo.");
+                return;
+            }
+
+            let mensaje = `Subiste ${archivos.length} archivo(s):\n`;
+            for (let i = 0; i < archivos.length; i++) {
+                mensaje += `- ${archivos[i].name}\n`;
+            }
+
+            alert(mensaje);
+            cerrarOverlay();
+        }
+
+
+        function cerrarChat() {
+            chatBox.style.display = "none";
+        }
+
+        function enviarMensaje(event) {
+            if (event.key === "Enter") {
+            const input = event.target;
+            const msg = input.value.trim();
+            if (msg !== "") {
+                const chatMessages = document.getElementById("chatMessages");
+                const nuevoMensaje = document.createElement("p");
+                nuevoMensaje.innerHTML = `<strong>Tú:</strong> ${msg}`;
+                chatMessages.appendChild(nuevoMensaje);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                input.value = "";
+            }
+            }
+        }
+
+        fetch("Footer.html")
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("footer-container").innerHTML = data;
+          })
+          .catch(error => console.error("Error al cargar el footer:", error));
     </script>
 </body>
 </html>
