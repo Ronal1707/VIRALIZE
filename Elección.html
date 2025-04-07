@@ -107,38 +107,49 @@
   </section>
 
   <section class="opciones-identidad">
-    <div class="opcion">
+  <label class="opcion">
+    <input type="radio" name="tipo-logo" hidden />
+    <div class="contenido-tarjeta">
       <img src="imagenes/LOGO VISA.png" alt="Ejemplo de logotipo" />
       <h4>Logotipo</h4>
       <p>LOGO = PALABRA</p>
       <p>Se habla de un logotipo cuando se identifica por texto.</p>
-      <button onclick="seleccionarOpcion('Logotipo')">Seleccionar</button>
     </div>
-  
-    <div class="opcion">
+  </label>
+
+  <label class="opcion">
+    <input type="radio" name="tipo-logo" hidden />
+    <div class="contenido-tarjeta">
       <img src="imagenes/PIZZA JUT.png" alt="Ejemplo de isologotipo" />
       <h4>Isologotipo</h4>
       <p>TEXTO + SÍMBOLO => SI O SI</p>
       <p>El texto y el ícono se encuentran agrupados. No funciona uno sin el otro.</p>
-      <button onclick="seleccionarOpcion('Isologotipo')">Seleccionar</button>
     </div>
-  
-    <div class="opcion">
+  </label>
+
+  <label class="opcion">
+    <input type="radio" name="tipo-logo" hidden />
+    <div class="contenido-tarjeta">
       <img src="imagenes/PEPSI.png" alt="Ejemplo de imagotipo" />
       <h4>Imagotipo</h4>
       <p>TEXTO + SÍMBOLO</p>
-      <p>combinación de imagen y texto. Estos pueden funcionar por separado.</p>
-      <button onclick="seleccionarOpcion('Imagotipo')">Seleccionar</button>
+      <p>Combinación de imagen y texto. Estos pueden funcionar por separado.</p>
     </div>
-  
-    <div class="opcion">
+  </label>
+
+  <label class="opcion">
+    <input type="radio" name="tipo-logo" hidden />
+    <div class="contenido-tarjeta">
       <img src="imagenes/apple.png" alt="Ejemplo de isotipo" />
-      <h4>ISOTIPO</h4>
+      <h4>Isotipo</h4>
       <p>SOLO SÍMBOLO O ÍCONO</p>
-      <p>Parte simbólica de la Marca. La misma, es reconocida sin el texto.</p>
-      <button onclick="seleccionarOpcion('Isologotipo')">Seleccionar</button>
+      <p>Parte simbólica de la marca. La misma es reconocida sin el texto.</p>
     </div>
-  </section>
+  </label>
+</section>
+
+
+  
   
   <section class="texto-secundario">
     <h3>
@@ -182,5 +193,51 @@
     }
   </script>
   
+  <script>
+    // GUARDAR al cambiar
+    document.querySelectorAll('input[type="radio"]').forEach(input => {
+      input.addEventListener('change', () => {
+        localStorage.setItem(input.name, input.value);
+      });
+    });
+  
+    document.querySelectorAll('input[type="color"]').forEach(input => {
+      input.addEventListener('input', () => {
+        localStorage.setItem(input.id, input.value);
+      });
+    });
+  
+    // CARGAR al iniciar
+    window.addEventListener('DOMContentLoaded', () => {
+      // Radios
+      document.querySelectorAll('input[type="radio"]').forEach(input => {
+        const saved = localStorage.getItem(input.name);
+        if (saved && input.value === saved) {
+          input.checked = true;
+        }
+      });
+  
+      // Colores
+      document.querySelectorAll('input[type="color"]').forEach(input => {
+        const saved = localStorage.getItem(input.id);
+        if (saved) {
+          input.value = saved;
+        }
+      });
+    });
+
+  </script>
+
+<div class="boton-final">
+  <button id="btn-siguiente">Lista para pasar al siguiente paso</button>
+</div>
+
+<script>
+  // Botón de redirección
+  document.getElementById("btn-siguiente").addEventListener("click", () => {
+    window.location.href = "pago.html"; // o ajusta el nombre si está en carpeta
+  });
+</script>
+
 </body>
 </html>
