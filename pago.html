@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Pago - Manual de Marca</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .confirmacion {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .servicio {
+            font-size: 18px;
+            color: #34495e;
+            margin-bottom: 5px;
+        }
+        .precio {
+            font-size: 28px;
+            font-weight: bold;
+            color: #27ae60;
+            margin: 20px 0;
+        }
+        .botones {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .boton {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        .cancelar {
+            background-color: #f1f3f6;
+            color: #e74c3c;
+            border: 1px solid #e74c3c;
+        }
+        .cancelar:hover {
+            background-color: #fdedec;
+        }
+        .pagar {
+            background-color: #5675fe;
+            color: white;
+        }
+        .pagar:hover {
+            background-color: #3a5bd9;
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmacion">
+        <h1>Confirmar tu compra</h1>
+        <div class="servicio">Creación de Manual de Marca</div>
+        <div class="precio">$500,000 COP</div>
+        
+        <div class="botones">
+            <a href="index.html">
+                <button class="boton cancelar">
+                    Cancelar
+                </button>
+            </a>
+            <a href="fomulario_usuario.html">
+                <button class="boton pagar">
+                    Pagar
+                </button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
