@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elección</title>
+  <link rel="stylesheet" href="Elección.css" /> <!-- Asegúrate que el nombre coincida EXACTAMENTE -->
+</head>
+<body>
+
+  <!-- SECCIÓN HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>
+        AHORA <span class="highlight">DISEÑA</span> TU <span class="highlight">MARCA</span> COMO TÚ LA <span class="highlight">IMAGINAS</span>
+      </h1>
+    </div>
+    <div class="hero-image">
+      <img src="/imagenes/DiseñomARCA.png" alt="Opciones diseño">
+    </div>
+  </section>
+
+  <!-- BARRA VERTICAL -->
+  <section class="seccion-con-barra espacio-reducido">
+    <div class="barra"></div>
+  </section>
+
+  <section class="texto-centrado espacio-reducido">
+    <h2>Selecciona una de las siguientes opciones para cada ítem, de manera que refleje con precisión la escencia de tu negocio. 
+        Empecemos...
+    </h2>
+  </section>
+
+  <section class="seccion-con-barra espacio-reducido">
+    <div class="barra"></div>
+  </section>
+
+  <section class="texto-secundario">
+    <h3>
+      <span class="color-azul">1. </span>Explora las diferentes plantillas de <span class="color-verde">Identidad Visual </span> que hemos preparado para ti.
+      Usa los botones <span class="color-verde"> "Anterior" </span> y <span class="color-verde">"Siguiente" </span> para verlas una por una. Cuando encuentres la que mejor presente tu,
+       <span class="color-azul"> logo, colores, tipografía y estilo visual,</span> haz clic en <span class="color-verde"> "Seleccionar" </span>.
+
+    </h3>
+  </section>
+ 
+  <section class="visor">
+    <div class="visor-imagen">
+      <img id="imagen-activa" class= "imagen-grande" src="imagenes/OPC1_PREG1.jpg" alt="Opción actual">
+    </div>
+    <div class="visor-controles">
+      <button onclick="anteriorImagen()">Anterior</button>
+      <button onclick="seleccionarImagen()">Seleccionar</button>
+      <button onclick="siguienteImagen()">Siguiente</button>
+    </div>
+  </section>
+  
+  <script>
+    const imagenes = [
+      "imagenes/OPC1_PREG1.jpg",
+      "imagenes/OPC2_PREG1.avif",
+      "imagenes/OPC3_PREG1.avif",
+      "imagenes/OPC4_PREG1.webp"
+    ];
+  
+    let indiceActual = 0;
+    let imagenSeleccionada = null;
+  
+    function mostrarImagen() {
+      const img = document.getElementById("imagen-activa");
+  
+      // Al cambiar de imagen, quitar selección visual y lógica
+      img.classList.remove("seleccionada");
+      imagenSeleccionada = null;
+  
+      // Transición suave
+      img.style.opacity = 0;
+      setTimeout(() => {
+        img.src = imagenes[indiceActual];
+        img.style.opacity = 1;
+      }, 200);
+    }
+  
+    function anteriorImagen() {
+      indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
+      mostrarImagen();
+    }
+  
+    function siguienteImagen() {
+      indiceActual = (indiceActual + 1) % imagenes.length;
+      mostrarImagen();
+    }
+  
+    function seleccionarImagen() {
+      const img = document.getElementById("imagen-activa");
+  
+      // Marcar visualmente
+      img.classList.add("seleccionada");
+  
+      // Guardar selección internamente
+      imagenSeleccionada = imagenes[indiceActual];
+  
+      // Ir al siguiente paso (si existe)
+      const pasoSiguiente = document.getElementById("siguiente-paso");
+      if (pasoSiguiente) {
+        pasoSiguiente.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  
+    window.onload = mostrarImagen;
+  </script>
+  
+  
+
+    <section class="texto-secundario">
+        <h3>
+          <span class="color-azul">2. </span>Cada marca se  <span class="color-verde">representa </span> de forma <span class="color-verde">distinta.  </span>
+          Aquí te mostramos cuatro estilos visuales: algunos <span class="color-azul"> dan protagonismo</span> al <span class="color-azul"> nombre,</span>otros al
+          <span class="color-azul"> ícono,</span> o <span class="color-azul"> combinan ambos.</span>
+          <span class="color-verde">Revisa </span>cada opción, <span class="color-verde">lee </span> su definición, <span class="color-verde">observa </span> el ejemplo 
+          y <span class="color-verde">selecciona </span> el que mejor refleje la esencia de tu negocio.
+        </h3>
+  </section>
+
+  <section class="opciones-identidad">
+  <label class="opcion">
+    <input type="radio" name="tipo-logo" hidden />
+    <div class="contenido-tarjeta">
+      <img src="imagenes/LOGO VISA.png" alt="Ejemplo de logotipo" />
+      <h4>Logotipo</h4>
+      <p>LOGO = PALABRA</p>
+      <p>Se habla de un logotipo cuando se identifica por texto.</p>
+    </div>
+  </label>
+
+  <label class="opcion">
+    <input type="radio" name="tipo-logo" hidden />
+    <div class="contenido-tarjeta">
+      <img src="imagenes/PIZZA JUT.png" alt="Ejemplo de isologotipo" />
+      <h4>Isologotipo</h4>
+      <p>TEXTO + SÍMBOLO => SI O SI</p>
+      <p>El texto y el ícono se encuentran agrupados. No funciona uno sin el otro.</p>
+    </div>
+  </label>
+
+  <label class="opcion">
+    <input type="radio" name="tipo-logo" hidden />
+    <div class="contenido-tarjeta">
+      <img src="imagenes/PEPSI.png" alt="Ejemplo de imagotipo" />
+      <h4>Imagotipo</h4>
+      <p>TEXTO + SÍMBOLO</p>
+      <p>Combinación de imagen y texto. Estos pueden funcionar por separado.</p>
+    </div>
+  </label>
+
+  <label class="opcion">
+    <input type="radio" name="tipo-logo" hidden />
+    <div class="contenido-tarjeta">
+      <img src="imagenes/apple.png" alt="Ejemplo de isotipo" />
+      <h4>Isotipo</h4>
+      <p>SOLO SÍMBOLO O ÍCONO</p>
+      <p>Parte simbólica de la marca. La misma es reconocida sin el texto.</p>
+    </div>
+  </label>
+</section>
+
+
+  
+  
+  <section class="texto-secundario">
+    <h3>
+      <span class="color-azul">3. </span>  <span class="color-verde">Elige </span> dos colores que <span class="color-verde">definan </span>
+      la personalidad de tu marca. <span class="color-azul">Usa </span> el <span class="color-azul">cajón cromático </span> al cuál le darás clic
+      y podrás escoger qué  <span class="color-azul">colores base</span> podrán tener la paleta de colores de tu negocio, <span class="color-azul">observa </span> como combinan. 
+      (Recuerda, cuando abras el cajón cromatico, escoge le color y luego seleeciona afuera del cajón para que te muestre cuál escogiste en el círculo)
+      Cuando los tengas listo dale clic al botón <span class="color-verde">"Confirmas selección" </span>  
+    </h3>
+</section>
+
+<div class="contenedor-paleta">
+    <div class="selector-color">
+      <label for="color1">Color principal:</label>
+      <input type="color" id="color1" value="#00e6d1" onchange="actualizarColor(1)">
+      <div id="preview1" class="preview-color"></div>
+    </div>
+  
+    <div class="selector-color">
+      <label for="color2">Color secundario:</label>
+      <input type="color" id="color2" value="#ffbc00" onchange="actualizarColor(2)">
+      <div id="preview2" class="preview-color"></div>
+    </div>
+  </div>
+  
+  <div class="contenedor-boton">
+    <button class="btn-confirmar" onclick="confirmarColores()">Confirmar selección</button>
+  </div>
+  
+  <script>
+    function actualizarColor(numero) {
+      const input = document.getElementById(`color${numero}`);
+      const preview = document.getElementById(`preview${numero}`);
+      preview.style.backgroundColor = input.value;
+    }
+  
+    function confirmarColores() {
+      const color1 = document.getElementById("color1").value;
+      const color2 = document.getElementById("color2").value;
+      alert(`Has seleccionado:\nColor 1: ${color1}\nColor 2: ${color2}`);
+    }
+  </script>
+  
+  <script>
+    // GUARDAR al cambiar
+    document.querySelectorAll('input[type="radio"]').forEach(input => {
+      input.addEventListener('change', () => {
+        localStorage.setItem(input.name, input.value);
+      });
+    });
+  
+    document.querySelectorAll('input[type="color"]').forEach(input => {
+      input.addEventListener('input', () => {
+        localStorage.setItem(input.id, input.value);
+      });
+    });
+  
+    // CARGAR al iniciar
+    window.addEventListener('DOMContentLoaded', () => {
+      // Radios
+      document.querySelectorAll('input[type="radio"]').forEach(input => {
+        const saved = localStorage.getItem(input.name);
+        if (saved && input.value === saved) {
+          input.checked = true;
+        }
+      });
+  
+      // Colores
+      document.querySelectorAll('input[type="color"]').forEach(input => {
+        const saved = localStorage.getItem(input.id);
+        if (saved) {
+          input.value = saved;
+        }
+      });
+    });
+
+  </script>
+
+<div class="boton-final">
+  <button id="btn-siguiente">Lista para pasar al siguiente paso</button>
+</div>
+
+<script>
+  // Botón de redirección
+  document.getElementById("btn-siguiente").addEventListener("click", () => {
+    window.location.href = "pago.html"; // o ajusta el nombre si está en carpeta
+  });
+</script>
+
+</body>
+</html>

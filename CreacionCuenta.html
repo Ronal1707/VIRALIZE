@@ -43,5 +43,13 @@
             </div>
         </form>
     </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Detiene el envío real del formulario
+        window.location.href = "Elección.html"; // Redirige a Elección.html
+        });
+    </script>
+
 </body>
 </html>
