@@ -93,71 +93,70 @@
         .catch(error => console.error("Error al cargar el header:", error));
     </script>
 
-
     <h1>Briefing para Manual de Marca</h1>
     
-    <form action="#" method="post" enctype="multipart/form-data">
+    <form action="perfil_usuario.html" method="get">
         <div class="form-section">
             <h2>1. Esencia de la Marca</h2>
-            <label for="palabras-clave">¿Qué 3 palabras definen tu marca?</label>
-            <input type="text" id="palabras-clave" name="palabras-clave" placeholder="Ej: Innovación, Confianza, Sostenibilidad" required>
+            <label for="palabras-clave">¿Qué 3 palabras definen tu marca? <span class="optional">(opcional)</span></label>
+            <input type="text" id="palabras-clave" name="palabras-clave" placeholder="Ej: Innovación, Confianza, Sostenibilidad">
             
-            <label for="diferencial">¿Qué hace única a tu marca?</label>
-            <textarea id="diferencial" name="diferencial" required></textarea>
+            <label for="diferencial">¿Qué hace única a tu marca? <span class="optional">(opcional)</span></label>
+            <textarea id="diferencial" name="diferencial"></textarea>
             
-            <label for="emocion">¿Qué emoción debe transmitir?</label>
-            <input type="text" id="emocion" name="emocion" placeholder="Ej: Confianza, Diversión, Sofisticación" required>
+            <label for="emocion">¿Qué emoción debe transmitir? <span class="optional">(opcional)</span></label>
+            <input type="text" id="emocion" name="emocion" placeholder="Ej: Confianza, Diversión, Sofisticación">
         </div>
         
         <div class="form-section">
             <h2>2. Público Objetivo</h2>
-            <label for="publico">¿A quién quieres llegar? (edad, intereses, estilo de vida)</label>
-            <textarea id="publico" name="publico" required></textarea>
+            <label for="publico">¿A quién quieres llegar? <span class="optional">(opcional)</span></label>
+            <textarea id="publico" name="publico" placeholder="Edad, intereses, estilo de vida"></textarea>
             
-            <label for="percepcion">¿Cómo quieres que te perciban?</label>
-            <input type="text" id="percepcion" name="percepcion" placeholder="Ej: Profesional, Accesible, Premium" required>
+            <label for="percepcion">¿Cómo quieres que te perciban? <span class="optional">(opcional)</span></label>
+            <input type="text" id="percepcion" name="percepcion" placeholder="Ej: Profesional, Accesible, Premium">
         </div>
         
         <div class="form-section">
             <h2>3. Elementos Visuales</h2>
-            <label>Sube tus archivos actuales (logo, imágenes, etc.)</label>
+            <label>Sube tus archivos actuales (logo, imágenes, etc.) <span class="optional">(opcional)</span></label>
             <div class="file-upload">
                 <input type="file" id="archivos" name="archivos[]" multiple accept="image/*,.pdf,.ai,.eps,.psd">
                 <p class="note">Formatos aceptados: JPG, PNG, PDF, AI, EPS, PSD (Máx. 10MB cada archivo)</p>
             </div>
             
-            <label for="elementos-actuales">Describe tus elementos actuales (qué te gusta/no te gusta)</label>
-            <textarea id="elementos-actuales" name="elementos-actuales" placeholder="Ej: 'El logo actual es muy complejo', 'Me gustan estos colores pero no la tipografía'"></textarea>
+            <label for="elementos-actuales">Describe tus elementos actuales <span class="optional">(opcional)</span></label>
+            <textarea id="elementos-actuales" name="elementos-actuales" placeholder="Qué te gusta/no te gusta de tu identidad actual"></textarea>
             
-            <label for="referencias">¿Tienes ejemplos de marcas que te inspiren? (URL o descripción)</label>
-            <textarea id="referencias" name="referencias"></textarea>
+            <label for="referencias">Ejemplos de marcas que te inspiren <span class="optional">(opcional)</span></label>
+            <textarea id="referencias" name="referencias" placeholder="URL o descripción"></textarea>
         </div>
         
         <div class="form-section">
             <h2>4. Aplicaciones Prácticas</h2>
-            <label for="usos">¿Dónde se usará principalmente la marca?</label>
-            <textarea id="usos" name="usos" placeholder="Ej: Redes sociales, página web, packaging, uniformes" required></textarea>
+            <label for="usos">¿Dónde se usará principalmente la marca? <span class="optional">(opcional)</span></label>
+            <textarea id="usos" name="usos" placeholder="Ej: Redes sociales, página web, packaging, uniformes"></textarea>
             
-            <label for="variantes">¿Necesitas variantes del logo? (ej: para fondos oscuros, iconos, etc.)</label>
-            <input type="text" id="variantes" name="variantes">
+            <label for="variantes">¿Necesitas variantes del logo? <span class="optional">(opcional)</span></label>
+            <input type="text" id="variantes" name="variantes" placeholder="Ej: para fondos oscuros, iconos, etc.">
         </div>
         
         <div class="form-section">
             <h2>5. Competencia</h2>
-            <label for="competencia1">Marca competidora #1:</label>
+            <label for="competencia1">Marca competidora #1 <span class="optional">(opcional)</span></label>
             <input type="text" id="competencia1" name="competencia1" placeholder="Nombre de la marca">
             
-            <label for="competencia2">Marca competidora #2:</label>
+            <label for="competencia2">Marca competidora #2 <span class="optional">(opcional)</span></label>
             <input type="text" id="competencia2" name="competencia2" placeholder="Nombre de la marca">
             
-            <label for="analisis-competencia">¿Qué hacen bien/mal en su identidad visual?</label>
-            <textarea id="analisis-competencia" name="analisis-competencia"></textarea>
+            <label for="analisis-competencia">Análisis de competencia <span class="optional">(opcional)</span></label>
+            <textarea id="analisis-competencia" name="analisis-competencia" placeholder="Qué hacen bien/mal en su identidad visual"></textarea>
         </div>
         
         <div class="form-section">
             <h2>Bonus Creativo</h2>
-            <label for="metafora">Si tu marca fuera un animal/color/música, ¿cuál sería y por qué?</label>
-            <textarea id="metafora" name="metafora" placeholder="Ej: Un águila por la visión estratégica, azul por la confianza, jazz por la creatividad"></textarea>
+            <label for="metafora">Si tu marca fuera un animal/color/música... <span class="optional">(opcional)</span></label>
+            <textarea id="metafora" name="metafora" placeholder="Ej: Un águila por la visión estratégica, azul por la confianza"></textarea>
             <p class="note">Esta pregunta nos ayuda a entender la personalidad de tu marca de forma creativa</p>
         </div>
         
