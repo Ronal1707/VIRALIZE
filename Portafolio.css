@@ -1,78 +1,120 @@
-/* === Estilos generales === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fondo página web*/
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
-  }
-  
-  /* === Portafolio === */
-  .portafolio-container {
-    max-width: 1000px;
-    margin: 2em auto;
-    padding: 1em;
-  }
-  
-  .portafolio-container h1 {
-    text-align: center;
-    color: #2c3e50;
-  }
-  
-  .proyecto {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #ccc;
-    padding: 1em;
-    margin-bottom: 1.5em;
-    display: flex;
-    gap: 1em;
-  }
-  
-  .proyecto img {
-    max-width: 200px;
-    border-radius: 10px;
-  }
-  
-  .proyecto-info {
-    flex: 1;
-  }
-  
-  /* === Encuesta === */
-  form {
-    max-width: 600px;
-    margin: 2em auto;
-    padding: 2em;
-    background-color: white;
-    box-shadow: 0 0 10px #ccc;
-    border-radius: 10px;
-  }
-  
-  form label {
-    display: block;
-    margin-bottom: 1em;
-    font-weight: bold;
-  }
-  
-  form select, 
-  form textarea {
-    width: 100%;
-    padding: 0.5em;
-    margin-top: 0.3em;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  form button {
-    background-color: #2c3e50;
-    color: white;
-    padding: 0.7em 1.5em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  form button:hover {
-    background-color: #34495e;
-  }
-  
+  font-family: Arial, sans-serif;
+  background-color: #040811;
+  color: #faebf0;
+  padding: 70px 9%;
+}
+
+/* Sección HERO */
+.hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 100px 6% 70px 6%;
+  text-align: left;
+  gap:40px;
+}
+
+
+.hero h1 {
+  font-size: 5vw; 
+  font-weight: bold; 
+  text-align: left; 
+  max-width: 70%; 
+  line-height: 1;
+
+}
+
+.hero-text h1 .highlight {
+  color: #00e6d1;
+}
+
+.hero p {
+  font-size: 1.3vw; 
+  text-align: left;
+  max-width: 100%;
+  margin-top: 50px;
+}
+
+.hero-text p .highlight {
+  color: #5675fe;
+}
+
+.hero-image {
+
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+}
+
+.separador {
+  border: none;
+  height: 5px;
+  background-color: #00e6d1; /* Color a juego con tu marca */
+  margin: 40px auto; /* Espacio arriba y abajo */
+  width: 90%; /* No toda la pantalla, para verse elegante */
+  border-radius: 10px; /* Bordes redondeados para suavidad visual */
+}
+
+.portafolio ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 15px; 
+  list-style: none;
+  padding: 0;
+  margin-top: 50px; 
+  justify-items: center;
+}
+
+.portafolio li {
+  width: 100%;
+  max-width: 600px; /*Espacio Horizontal */
+}
+
+.portafolio li figure {
+  margin: 0;
+  text-align: center;
+}
+.portafolio li figure img {
+  width: 100%;
+  height: 350px; /*Espacio Altura*/
+  object-fit: cover; 
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  display: block;
+}
+
+.portafolio li figure {
+  position: relative; 
+  overflow: hidden; 
+}
+
+.portafolio li figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); 
+  color: white;
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  font: bold 20px/1.4 Verdana;
+  opacity: 0; 
+  transition: opacity 0.3s ease-in-out;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.portafolio li figure:hover figcaption {
+  opacity: 1; 
+}

@@ -1,42 +1,85 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Portafolio</title>
-  <link rel="stylesheet" href="Portafolio.css"> <!-- o tu estilo personal -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio - Viralize</title>
+
+  <link rel="stylesheet" href="portafolio.css" />
 </head>
 <body>
+
+  <!--Carga header-->
   <div id="header-container"></div>
+
   <script>
     fetch("Header1.html")
       .then(response => response.text())
       .then(data => {
         document.getElementById("header-container").innerHTML = data;
+
+        // Permite que los enlaces del menú funcionen
+        document.querySelectorAll("#header-container a").forEach(link => {
+          link.addEventListener("click", function(event) {
+            event.preventDefault();
+            window.location.href = this.getAttribute("href");
+          });
+        });
       })
       .catch(error => console.error("Error al cargar el header:", error));
   </script>
 
-  <main>
-    <h1>Mi Portafolio</h1>
-    <section>
-      <article>
-        <h2>Proyecto 1</h2>
-        <img src="img/proyecto1.jpg" alt="Proyecto 1">
-        <p>Descripción breve del proyecto...</p>
-      </article>
-      <!-- Más artículos si deseas -->
-    </section>
-  </main>
+<section class="hero">
+  <div class="hero-text">
+    <h1>
+      LO <span class="highlight">MEJOR</span> DE NUESTRO <span class="highlight">TRABAJO</span>
+    </h1>
+    <p>En esta sección encontrarás nuestros proyectos más destacados e innovadores, cada uno personalizado para satisfacer las necesidades y objetivos específicos de cada cliente.</p>
+  </div>
 
-  <div id="footer-container"></div>
+  <div class="hero-image">
+    <img src="/imagenes/PortafolioJOB.png" alt="TRABAJOS VIRALIZE">
+  </div>
+</section>
 
-  <script>
-    fetch("Footer.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("footer-container").innerHTML = data;
-      })
-      .catch(error => console.error("Error al cargar el footer:", error));
-  </script>
+<hr class="separador"> 
+
+<section class="portafolio">
+<ul>
+  <li>
+    <figure>
+      <img src="/imagenes/Olympic-Provisions.jpg.webp" alt="Ejemplo futuro 1">
+      <figcaption>
+        <p>Olympic Provisions</p>
+      </figcaption>
+    </figure>
+  </li>
+  <li>
+    <figure>
+      <img src="/imagenes/Yellow Submarine.jpg" alt="Ejemplo futuro 2">
+      <figcaption>
+        <p>Yellow Submarine</p>
+      </figcaption>
+    </figure>
+  </li>
+  <li>
+    <figure>
+      <img src="/imagenes/DEJA BREW.png" alt="Ejemplo futuro 3">
+      <figcaption>
+        <p>Deja Brew</p>
+      </figcaption>
+    </figure>
+  </li>
+  <li>
+    <figure>
+      <img src="/imagenes/EDUARDO'S.jpg" alt="Ejemplo futuro 4">
+      <figcaption>
+        <p>Olympic Provisions</p>
+      </figcaption>
+    </figure>
+  </li>
+</ul>
+</section>
+
 </body>
 </html>
