@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <!--Carga header-->
+  <!--Header-->
   <div id="header-container"></div>
 
   <script>
@@ -80,6 +80,18 @@
   </li>
 </ul>
 </section>
+
+<!-- fOOTER -->
+<div id="footer-container"></div>
+
+<script>
+  fetch("Footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-container").innerHTML = data;
+    })
+    .catch(error => console.error("Error al cargar el footer:", error));
+</script>
 
 </body>
 </html>
