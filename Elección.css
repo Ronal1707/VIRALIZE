@@ -292,5 +292,61 @@
     box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
   }
   
+  @media (max-width: 768px) {
+    body {
+        padding: 20px 5%;
+    }
+
+    .frase-inicial {
+        font-size: 2.5rem;
+    }
+
+    .Instrucciones {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .imagen-lateral img {
+        max-width: 100%;
+    }
+
+    .texto-lateral {
+        font-size: 1.4rem;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .texto-secundario {
+        font-size: 1.3rem;
+        padding: 0 5%;
+        height: auto;
+    }
+
+    .galeria-imagenes {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .galeria-imagenes img {
+        width: 100%;
+    }
+
+    .opciones-identidad {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .opcion {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .tarjeta img {
+        height: 120px;
+    }
+}
   
   
