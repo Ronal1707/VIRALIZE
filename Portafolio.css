@@ -118,3 +118,58 @@ body {
 .portafolio li figure:hover figcaption {
   opacity: 1; 
 }
+
+@media (max-width: 768px) {
+  body {
+    padding: 20px 5%;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 5% 40px 5%;
+  }
+
+  .hero h1 {
+    font-size: 8vw;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .hero p {
+    font-size: 4vw;
+    margin-top: 10px;
+    max-width: 100%;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 30px;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .portafolio ul {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .portafolio li {
+    max-width: 100%;
+  }
+
+  .portafolio li figure img {
+    height: auto;
+    max-height: 300px;
+  }
+
+  .portafolio li figcaption {
+    font-size: 4vw;
+  }
+}
