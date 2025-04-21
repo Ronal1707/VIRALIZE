@@ -11,77 +11,40 @@
     padding: 70px 9%;
   }
   
-  /* HERO */
-   .hero {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 70px 6%;
-    text-align: left;
-    gap:40px;
-}
-  
-.hero h1 {
-    font-size: 5vw; 
-    font-weight: bold; 
-    text-align: left; 
-    max-width: 70%; 
-    line-height: 1;
-
-}
-  
-.hero p {
-    font-size: 1.3vw; 
-    text-align: left;
-    max-width: 100%;
-    margin-top: 50px;
-}
-
-.hero-text p .highlight {
-    color: #5675fe;
-}
-
-.hero-image {
-
-    width: 100%;
-    max-width: 800px;
-    height: auto;
+.frase-inicial {
+  text-align: center;
+  font-size: 3.5rem;
+  margin: 20px auto;
+  color: #ffffff;
+  font-weight: bold;
 }
 
 .highlight {
     color: #00e6d1; /* o el color que tú quieras usar para destacar las palabras */
   }
 
-  /* BARRA VERTICAL */
-  .seccion-con-barra {
+  .Instrucciones {
     display: flex;
-    justify-content: center;
-    padding: 60px 0;
-    margin: 10px 0;
-  }
-  
-  .barra {
-    width: 20px;
-    height: 150px;
-    background-color: #5675fe;
-    border-radius: 10px;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Opcional: centra horizontalmente el conjunto */
+    gap: 2px; /* Espacio entre imagen y texto */
+    margin: 20px auto;
+    max-width: 90%;
+    flex-wrap: wrap; /* Para que se acomode bien en pantallas pequeñas */
   }
 
-  .espacio-reducido {
-    padding: 10px 0 !important;
-    margin: 0 !important;
+  .imagen-lateral img {
+    max-width: 600px;
+    height: auto;
+    border-radius: 12px;
   }
 
-  .texto-centrado {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: auto; /* Ocupa toda la altura de la pantalla */
-    color: white;
-    font-size: 3vw;
-    font-weight: bold;
-    padding: 60px 10%;
+  .texto-lateral {
+    max-width: 400px;
+    font-size: 1.7rem;
+    color: #ffffff;
+    text-align: left;
+    font-weight: 500;
   }
   
   .texto-secundario {
@@ -89,9 +52,9 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-  
-    height: 60vh; /* Menor altura que el anterior */
-    font-size: 2vw;
+    margin-bottom: 10px;
+    height: 35vh; /* Menor altura que el anterior */
+    font-size:  1.7rem;
     font-weight: 600;
     padding: 0 10%;
     line-height: 1.5;
@@ -109,134 +72,114 @@
   .color-blanco {
     color: #ffffff;
   }
-  
+  /**/
   .imagen-grande {
     width: 100%;
-    max-width: 700px;
+    max-width: 800px; /* Aumenta este valor si quieres que se vean aún más grandes */
     height: auto;
     display: block;
     margin: 0 auto;
   }
-
-  .imagen-grande.seleccionada {
-    border: 5px solid #00e6d1;
-    box-shadow: 0 0 15px #00e6d1;
-    border-radius: 10px;
+ 
+  .selector-imagenes {
+    margin-top: 0;
+    padding-top: 0;
   }
   
-
-  
-  .visor {
+  .galeria-imagenes {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 0;
+    padding-top: 0;
   }
   
-  .visor-imagen img {
-    width: 80vw;
-    max-width: 900px;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-    transition: opacity 0.3s ease-in-out;
-  }
-  
-  .visor-controles {
-    margin-top: 20px;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .visor-controles button {
-    padding: 12px 24px;
-    background-color: #5675fe;
-    color: white;
-    border: none;
+  .galeria-imagenes img {
+    width: 500px;
     border-radius: 10px;
-    font-size: 1.1rem;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: transform 0.3s, border-color 0.3s;
+    border: 3px solid transparent;
   }
   
-  .visor-controles button:hover {
-    background-color: #00e6d1;
+  .galeria-imagenes img:hover {
+    transform: scale(1.05);
   }
+  
+  .galeria-imagenes img.seleccionada {
+    border: 5px solid #00e6d1;
+    box-shadow: 0 0 20px #00e6d1;
+    transform: scale(1.08); 
+  }
+  
   /**/
-
   .opciones-identidad {
     display: flex;
-  justify-content: center;      /* Centra horizontalmente */
-  align-items: stretch;         /* Que las tarjetas tengan la misma altura */
-  gap: 40px;                    /* Espacio entre tarjetas */
-  flex-wrap: wrap;              /* Que se acomoden si no caben */
-  margin-top: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 2rem;
   }
   
   .opcion {
-    display: block;
-    border: 2px solid transparent;
-    border-radius: 12px;
+    width: 250px;
+    cursor: pointer;
+  }
+  
+  .tarjeta {
+    background-color: #cccccc;
+    border-radius: 15px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-    cursor: pointer;
-  }
-  
-  .opcion .contenido-tarjeta {
-    padding: 16px;
-    background-color: #a3a1a1;
     text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  .opcion:hover {
-    transform: translateY(-4px);
-  }
-  
-  /* Aquí se activa todo el label si su input está checked */
-  .opcion input[type="radio"]:checked ~ .contenido-tarjeta {
-    border: 2px solid #5675fe;
-    box-shadow: 0 10px 20px rgba(60, 194, 145, 0.4);
-    transform: translateY(-8px);
-    background-color: #5675fe6e;
-    border-radius: 12px;
-  }
-  
-  
-  .opcion img {
-    width: 100%;
-    height: auto;
-    max-height: 150px;
+  .tarjeta img {
+    width: 80%;
+    height: 160px;
     object-fit: contain;
-    margin-bottom: 15px;
+    display: block;
+    margin: 0 auto;
+    padding-top: 10px;
   }
   
-  .opcion h4 {
-    font-size: 1.3rem;
-    color: #00e6d1;
-    margin-bottom: 10px 0;
+  .texto {
+    padding: 15px;
   }
   
-  .opcion p {
-    font-size: 1rem;
-    color: #ffffffd9;
-    margin-bottom: auto;
-    line-height: 1.5;
-  }
-  
-  .opcion button {
-    margin-top: 20px;
-    background-color: #5675fe;
-    border: none;
-    padding: 10px 18px;
-    border-radius: 8px;
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
   }
   
-  .opcion button:hover {
-    background-color: #00e6d1;
+  .overlay h4 {
+    font-size: 1.5rem;
+    margin: 0;
   }
+  
+  /* Efecto al hacer hover o selección */
+  .opcion:hover .tarjeta,
+  .opcion input:checked + .tarjeta {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02);
+  }
+  
+  .opcion:hover .overlay,
+  .opcion input:checked + .tarjeta .overlay {
+    opacity: 1;
+  }
+  
+     
   /**/
   .contenedor-paleta {
     display: flex;
