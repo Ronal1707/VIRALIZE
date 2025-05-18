@@ -86,7 +86,7 @@ header {
     width: 100%;
 }
 
-/* Menú hamburguesa para móviles */
+
 .menu-toggle {
     display: none;
     cursor: pointer;
@@ -106,11 +106,10 @@ header {
 }
 
 
-/* Estilos para el formulario */
 .form-container {
     background-color: #24316B;
-    padding: 40px 20px 20px 20px;
-    border-radius: 15%;
+    padding: 40px 20px;
+    border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
@@ -122,7 +121,7 @@ header {
 .logo-user {
     position: absolute;
     top: -30px;
-    left: 85%;
+    left: 50%;
     transform: translateX(-50%);
     width: 60px;
     height: 60px;
@@ -179,14 +178,15 @@ input {
 }
 
 button {
-    width: auto;
-    padding: 10px 50px;
+    width: 100%;
+    padding: 12px;
     background-color: #00E6D1;
     border: none;
     border-radius: 10px;
     color: black;
     font-size: 16px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 button:hover {
@@ -195,8 +195,9 @@ button:hover {
 
 .buttons-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     gap: 10px;
+    margin-top: 10px;
 }
 
 .tengocuenta{
@@ -207,24 +208,43 @@ button:hover {
     background-color: #2F408C;
 }
 
-/* Media Queries para hacer el diseño responsive */
+/* Media Queries para diseño responsive */
 @media (max-width: 600px) {
     .form-container {
-        padding: 15px;
-        width: 90%;
-    }
-
-    form h2 {
-        font-size: 20px;
+        padding: 20px;
+        margin: 100px 20px;
     }
 
     input, button {
         font-size: 14px;
-        padding: 12px;
+        padding: 10px;
     }
 
-    header nav ul li {
-        display: block;
-        margin: 10px 0;
+    form h2 {
+        font-size: 22px;
+    }
+
+    .role-label {
+        font-size: 14px;
+    }
+
+    .logo-user {
+        width: 60px;
+        height: 60px;
+        top: -30px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .menu.active {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 }
