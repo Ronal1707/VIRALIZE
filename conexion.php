@@ -1,15 +1,15 @@
 <?php
-$server = "sql101.infinityfree.com";
-$username = "if0_38689300";
-$password = "KH98mO5E9a";
-$database = "if0_38689300_DB_viralize";
+// Database connection configuration
+$server = "localhost";
+$user = "root";
+$password = "";
+$dbname = "ejemplo";
 
-$conexion = new mysqli($server, $username, $password, $database);
+// Crear conexión
+$conexion = new mysqli($server, $user, $password, $dbname);
 
+// Verificar conexión
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
 }
-
-// Elimina el echo de conexión exitosa para producción
-// echo "Conexión exitosa a la base de datos";
 ?>
