@@ -101,5 +101,26 @@
             }
         });
     </script>
+
+    <script>
+    // Espera a que se cargue el header con fetch
+    window.addEventListener("DOMContentLoaded", () => {
+        const observer = new MutationObserver(() => {
+            const menuToggle = document.getElementById('mobile-menu');
+            const menu = document.getElementById('menu');
+
+            if (menuToggle && menu) {
+                menuToggle.addEventListener('click', () => {
+                    menuToggle.classList.toggle('active');
+                    menu.classList.toggle('active');
+                });
+                observer.disconnect(); // Detener observador una vez se encuentra el menú
+            }
+        });
+
+        observer.observe(document.body, { childList: true, subtree: true });
+    });
+</script>
+
 </body>
 </html>
