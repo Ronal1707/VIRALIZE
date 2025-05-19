@@ -3,8 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Usuario</title>
+    <title>Iniciar Sesión</title>
     <link rel="stylesheet" href="InicioSesion.css">
+    <style>
+        .error-message {
+            color: #d9534f;
+            background-color: #f2dede;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            border: 1px solid #ebccd1;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <div id="cookie-placeholder"></div>
@@ -23,12 +34,16 @@
         <div class="logo-user">
             <img src="imagenes/LogoUsuario.png" alt="Logo Usuario">
         </div>
-        <form id="loginForm" onsubmit="return validateLogin()">
+        
+        <!-- Espacio para mensajes de error (se llena con JavaScript) -->
+        <div id="error-message" class="error-message" style="display: none;"></div>
+
+        <form id="loginForm" action="procesar_login.php" method="POST">
             <h2>Iniciar Sesión</h2>
             <h5>¿Nuevo aquí? <a href="CreacionCuenta.html">Haz clic para crear tu cuenta</a></h5>
             
-            <label for="username">Correo electrónico</label>
-            <input type="text" id="username" name="username" placeholder="Ingresa tu correo electrónico" required>
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" placeholder="Ingresa tu correo electrónico" required>
 
             <label for="password">Contraseña</label>
             <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
@@ -39,45 +54,52 @@
                     <span class="slider"></span>
                 </label>
                 <span class="role-label">Soy desarrollador</span>
+                <input type="hidden" name="es_desarrollador" id="form-role-toggle" value="0">
             </div>
 
-            <h4><a href="#">¿Olvidaste tu contraseña?</a></h4>
+            <h4><a href="recuperar_contrasena.html">¿Olvidaste tu contraseña?</a></h4>
             <button type="submit">Iniciar sesión</button>
         </form>
     </div>
 
-        <script>
-        // Credenciales predefinidas (puedes agregar más)
-        const validCredentials = {
-            user: {
-                email: "usuario@ejemplo.com",
-                password: "clave123"
-            },
-            developer: {
-                email: "dev@ejemplo.com",
-                password: "dev456"
-            }
-        };
+    <script>
+        // Actualizar el campo hidden cuando cambia el toggle
+        document.getElementById('role-toggle').addEventListener('change', function() {
+            document.getElementById('form-role-toggle').value = this.checked ? 1 : 0;
+        });
 
-        function validateLogin() {
-            const email = document.getElementById("username").value;
-            const password = document.getElementById("password").value;
-            const isDeveloper = document.getElementById("role-toggle").checked;
+        // Manejar mensajes de error desde la URL
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const errorMessage = document.getElementById('error-message');
             
-            // Validar según el rol seleccionado
-            const correctCredentials = isDeveloper ? validCredentials.developer : validCredentials.user;
-            
-            if(email === correctCredentials.email && password === correctCredentials.password) {
-                // Redirigir a la página correspondiente
-                window.location.href = isDeveloper ? "perfil_diseñador.html" : "perfil_usuario.html";
-                return false; // Evita el envío del formulario
-            } else {
-                alert("Credenciales incorrectas. Prueba con:\n" +
-                    `Email: ${correctCredentials.email}\n` +
-                    `Contraseña: ${correctCredentials.password}`);
-                return false; // Evita el envío del formulario
+            if (urlParams.has('error')) {
+                const error = urlParams.get('error');
+                let message = '';
+                
+                switch(error) {
+                    case 'campos_vacios':
+                        message = 'Por favor completa todos los campos';
+                        break;
+                    case 'credenciales_incorrectas':
+                        message = 'Correo o contraseña incorrectos';
+                        break;
+                    default:
+                        message = 'Error al iniciar sesión';
+                }
+                
+                if (message) {
+                    errorMessage.textContent = message;
+                    errorMessage.style.display = 'block';
+                }
             }
-        }
-        </script>
+            
+            // Limpiar los parámetros de la URL sin recargar
+            if (window.history.replaceState && urlParams.has('error')) {
+                const cleanUrl = window.location.pathname;
+                window.history.replaceState({}, document.title, cleanUrl);
+            }
+        });
+    </script>
 </body>
 </html>

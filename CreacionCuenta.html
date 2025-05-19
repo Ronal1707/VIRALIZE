@@ -3,37 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Usuario</title>
+    <title>Crear Cuenta - Viralize</title>
     <link rel="stylesheet" href="CreacionCuenta.css">
+    <style>
+        .error-message {
+            color: #ff0000;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+
 </head>
 <body>
     <div id="cookie-placeholder"></div>
-
     <div id="header-container"></div>
-    <script>
-      fetch("Header1.html")
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById("header-container").innerHTML = data;
-        })
-        .catch(error => console.error("Error al cargar el header:", error));
-    </script>
 
-    <!-- Formulario -->
     <div class="form-container">
         <div class="logo-user">
             <img src="imagenes/LogoCrearUsuario.png" alt="Logo Usuario">
         </div>
-        <form action="#" method="POST">
+        
+        <!-- Mensaje de error (se muestra dinámicamente) -->
+        <div id="error-message" class="error-message" style="display: none;"></div>
+        
+        <form id="registroForm" action="registro.php" method="POST">
             <h2>Creación de cuenta</h2>
-            <label for="user">Nombre</label>
-            <input type="text" id="user" name="username" placeholder="Ingresa tu nombre" required>
-            <label for="user_lastname">Apellido</label>
-            <input type="text" id="user_lastname" name="username" placeholder="Ingresa tu apellido" required>
-            <label for="email">Correo electrónico</label>
-            <input type="text" id="email" name="username" placeholder="Ingresa tu correo electrónico" required>
+            
+            <label for="nombre">Nombres</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+            
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido" required>
+            
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" placeholder="Ingresa tu correo electrónico" required>
+            
             <label for="password">Contraseña</label>
-            <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+            <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required minlength="8">
             
             <div class="buttons-container">
                 <button type="submit">Continuar</button>
@@ -45,11 +51,26 @@
     </div>
 
     <script>
-        document.querySelector('form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Detiene el envío real del formulario
-        window.location.href = "Elección.html"; // Redirige a Elección.html
+        // Cargar header
+        fetch("Header1.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header-container").innerHTML = data;
+            })
+            .catch(error => console.error("Error al cargar el header:", error));
+
+        // Validación del formulario antes de enviar
+        document.getElementById('registroForm').addEventListener('submit', function(e) {
+            const password = document.getElementById('password').value;
+            const errorElement = document.getElementById('error-message');
+            
+            // Validar contraseña
+            if (password.length < 8) {
+                e.preventDefault();
+                errorElement.textContent = "La contraseña debe tener al menos 8 caracteres";
+                errorElement.style.display = 'block';
+            }
         });
     </script>
-
 </body>
 </html>

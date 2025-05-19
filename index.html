@@ -1,143 +1,141 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Identidad de Marca - Viralize</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="Cookies.css">
+        <title>Identidad de Marca - Viralize</title>
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="Cookies.css">
 
-</head>
-<body>
+    </head>
+    <body>
 
-    <div id="cookie-placeholder"></div>
+        <div id="cookie-placeholder"></div>
 
-    <script>
-      // Cargar el HTML del componente de cookies dinámicamente
-      fetch("Cookies.html")
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById('cookie-placeholder').innerHTML = html;
-            const script = document.createElement('script');
-            script.src = 'Cookies.js';
-            document.body.appendChild(script);
-        });
-    </script>
+        <script>
+        // Cargar el HTML del componente de cookies dinámicamente
+        fetch("Cookies.html")
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('cookie-placeholder').innerHTML = html;
+                const script = document.createElement('script');
+                script.src = 'Cookies.js';
+                document.body.appendChild(script);
+            });
+        </script>
 
-    <div id="header-container"></div>
-    <script>
-      fetch("Header1.html")
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById("header-container").innerHTML = data;
-        })
-        .catch(error => console.error("Error al cargar el header:", error));
-    </script>
+        <div id="header-container"></div>
+        <script>
+        fetch("Header1.html")
+            .then(response => response.text())
+            .then(data => {
+            document.getElementById("header-container").innerHTML = data;
+            })
+            .catch(error => console.error("Error al cargar el header:", error));
+        </script>
 
+        <section class="hero">
 
-
-    <section class="hero">
-
-        <div class="hero-text">
-            <h1>CREAMOS MARCAS QUE <span class="highlight">CAUTIVAN, CONECTAN Y PERDURAN</span></h1>
-            <p>En Viralize creamos identidades de marca estratégicamente diseñadas a la medida de tu negocio, asegurando una imagen <span class="highlight">profesional</span>, <span class="highlight">coherente</span> y <span class="highlight">memorable</span> que conecte con tu audiencia y te diferencie de la competencia.</p>
-        </div>
-
-        <div class="hero-image">
-            <img src="imagenes/Brand.png" alt="Imagen de identidad de marca">
-        </div>
-    </section>
-
-    <div class="cta-wrapper2">
-        <a href="InicioSesion.html"><button class="cta-button2">¡Quiero mi manual de marca por $500.000COP!</button></a>
-    </div>
-
-    <section class="seccion-con-barra">
-        <div class="barra"></div>
-      </section>      
-
-    <section class="how-it-works">
-        <h2>¿CÓMO FUNCIONA?</h2>
-        <div class="steps-container">
-            <div class="steps-text">
-                <ul>
-                    <li><span class="highlight">Tu esencia, clara</span> <br> Cuéntanos de tu marca con un formulario simple y rápido.</li>
-                    <li><span class="highlight">Tu marca</span> <br> Cuéntanos lo que quieres lograr.</li>
-                    <li><span class="highlight">Realiza el pago </span> <br> de COP $500.000 mediante PE.</li>
-                    <li><span class="highlight">Trabajamos en tu identidad</span> <br>Contacto directo con tu diseñador y archivos listos para usar.</li>
-                </ul>
+            <div class="hero-text">
+                <h1>CREAMOS MARCAS QUE <span class="highlight">CAUTIVAN, CONECTAN Y PERDURAN</span></h1>
+                <p>En Viralize creamos identidades de marca estratégicamente diseñadas a la medida de tu negocio, asegurando una imagen <span class="highlight">profesional</span>, <span class="highlight">coherente</span> y <span class="highlight">memorable</span> que conecte con tu audiencia y te diferencie de la competencia.</p>
             </div>
-            <div class="steps-image">
-                <img src="imagenes/ComoFunciona.png" alt="Proceso de trabajo">
+
+            <div class="hero-image">
+                <img src="imagenes/Brand.png" alt="Imagen de identidad de marca">
             </div>
+        </section>
+
+        <div class="cta-wrapper2">
+            <a href="InicioSesion.html"><button class="cta-button2">¡Quiero mi manual de marca por $500.000COP!</button></a>
         </div>
 
-        <div class="cta-wrapper">
-            <a href="InicioSesion.html"><button class="cta-button">¡Quiero una marca única!</button></a>
-        </div>
+        <section class="seccion-con-barra">
+            <div class="barra"></div>
+        </section>      
 
-    </section>
-    <section class="seccion-con-barra">
-        <div class="barra"></div>
-      </section>      
+        <section class="how-it-works">
+            <h2>¿CÓMO FUNCIONA?</h2>
+            <div class="steps-container">
+                <div class="steps-text">
+                    <ul>
+                        <li><span class="highlight">Tu esencia, clara</span> <br> Cuéntanos de tu marca con un formulario simple y rápido.</li>
+                        <li><span class="highlight">Tu marca</span> <br> Cuéntanos lo que quieres lograr.</li>
+                        <li><span class="highlight">Realiza el pago </span> <br> de COP $500.000 mediante PE.</li>
+                        <li><span class="highlight">Trabajamos en tu identidad</span> <br>Contacto directo con tu diseñador y archivos listos para usar.</li>
+                    </ul>
+                </div>
+                <div class="steps-image">
+                    <img src="imagenes/ComoFunciona.png" alt="Proceso de trabajo">
+                </div>
+            </div>
 
-    <section class="identity-message">
-        <h2>TU IDENTIDAD DE MARCA TE DISTINGUE DE LA COMPETENCIA Y CREA CONEXIONES DURADERAS</h2>
-        <div class="cta-wrapper">
-            <a href="InicioSesion.html"><button class="cta-button">¡Quiero una marca única!</button></a>
-        </div>
-    </section>
+            <div class="cta-wrapper">
+                <a href="InicioSesion.html"><button class="cta-button">¡Quiero una marca única!</button></a>
+            </div>
 
-    <section class="seccion-con-barra">
-        <div class="barra"></div>
-      </section>      
+        </section>
+        <section class="seccion-con-barra">
+            <div class="barra"></div>
+        </section>      
 
-    <section class="why-choose">
-        <h2>¿POR QUÉ ESCOGER VIRALIZE?</h2>
-        <div class="benefits-container">
+        <section class="identity-message">
+            <h2>TU IDENTIDAD DE MARCA TE DISTINGUE DE LA COMPETENCIA Y CREA CONEXIONES DURADERAS</h2>
+            <div class="cta-wrapper">
+                <a href="InicioSesion.html"><button class="cta-button">¡Quiero una marca única!</button></a>
+            </div>
+        </section>
 
-            <div class="benefit">
-                <img src="imagenes/PorqueEscoger.png" alt="Manual de marca">
+        <section class="seccion-con-barra">
+            <div class="barra"></div>
+        </section>      
+
+        <section class="why-choose">
+            <h2>¿POR QUÉ ESCOGER VIRALIZEe?</h2>
+            <div class="benefits-container">
+
+                <div class="benefit">
+                    <img src="imagenes/PorqueEscoger.png" alt="Manual de marca">
+
+                        <div class="benefit-content">
+                        <p>Manuales de marca con opciones <span class="highlight">personalizadas</span></p>
+                        <button class="cta-button">¡Quiero una marca única!</button>
+                        </div>
+                    </div>
+
+                    
+
+                <div class="benefit">
+                    <img src="imagenes/Logotipos.png" alt="Diseño de logotipos y colores">
 
                     <div class="benefit-content">
-                      <p>Manuales de marca con opciones <span class="highlight">personalizadas</span></p>
-                      <button class="cta-button">¡Quiero una marca única!</button>
-                    </div>
-                  </div>
+                    <p><span class="highlight">Logotipos, colores, Mockups y tipografías</span> ajustadas a tu negocio</p>
+                    <a href="InicioSesion.html"><button class="cta-button">¡Quiero una marca única!</button></a>
+                </div>
+                </div>
+                
+                <div class="benefit">
+                    <img src="imagenes/IdentidadVisual.png" alt="Identidad visual">
 
-                  
-
-            <div class="benefit">
-                <img src="imagenes/Logotipos.png" alt="Diseño de logotipos y colores">
-
-                <div class="benefit-content">
-                <p><span class="highlight">Logotipos, colores, Mockups y tipografías</span> ajustadas a tu negocio</p>
-                <a href="InicioSesion.html"><button class="cta-button">¡Quiero una marca única!</button></a>
+                    <div class="benefit-content">
+                    <p>Tendrás una identidad visual <span class="highlight">sólida</span> que te diferencie</p>
+                    <a href="InicioSesion.html"><button class="cta-button">¡Quiero una marca única!</button></a>
+                
+                </div>
             </div>
-            </div>
-            
-            <div class="benefit">
-                <img src="imagenes/IdentidadVisual.png" alt="Identidad visual">
+        </section>
 
-                <div class="benefit-content">
-                <p>Tendrás una identidad visual <span class="highlight">sólida</span> que te diferencie</p>
-                <a href="InicioSesion.html"><button class="cta-button">¡Quiero una marca única!</button></a>
-            
-            </div>
-        </div>
-    </section>
+        <div id="footer-container"></div>
 
-    <div id="footer-container"></div>
+        <script>
+        fetch("Footer.html")
+            .then(response => response.text())
+            .then(data => {
+            document.getElementById("footer-container").innerHTML = data;
+            })
+            .catch(error => console.error("Error al cargar el footer:", error));
+        </script>
 
-    <script>
-      fetch("Footer.html")
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById("footer-container").innerHTML = data;
-        })
-        .catch(error => console.error("Error al cargar el footer:", error));
-    </script>
-
-</body>
-</html>
+    </body>
+    </html>
