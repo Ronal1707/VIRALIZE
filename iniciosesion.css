@@ -107,8 +107,8 @@ header {
 
 .form-container {
     background-color: #24316B;
-    padding: 40px 20px;
-    border-radius: 15px;
+    padding: 40px 20px 20px 20px;
+    border-radius: 15%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
@@ -177,18 +177,20 @@ input {
 }
 
 button {
-    width: 100%;
-    padding: 12px;
+    width: auto;
+    padding: 10px 50px;
     background-color: #00E6D1;
     border: none;
     border-radius: 10px;
     color: black;
     font-size: 16px;
     cursor: pointer;
+    margin: 0 auto;
     display: block;
-    margin: 20px 0 0 0;
-    position: static;
-    transform: none;
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 button:hover {
@@ -259,52 +261,25 @@ input:checked + .slider:before {
     transform: translateX(26px);
 }
 
-/* Media Queries para diseño responsive */
+/* Media Queries para hacer el diseño responsive */
 @media (max-width: 600px) {
     .form-container {
-        padding: 20px;
-        margin: 100px 20px;
+        padding: 15px;
+        width: 90%;
     }
 
     form h2 {
-        font-size: 22px;
+        font-size: 20px;
     }
 
-    input {
+    input, button {
         font-size: 14px;
-        padding: 10px;
+        padding: 12px;
     }
 
-    .role-label {
-        font-size: 14px;
-    }
-
-    button {
-        font-size: 14px;
-        padding: 10px;
-        margin-top: 15px;
-    }
-
-    .logo-user {
-        width: 60px;
-        height: 60px;
-        top: -30px;
-    }
-
-    header .menu {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .menu-toggle {
-        display: flex;
-    }
-
-    .menu {
-        display: none;
-    }
-
-    .menu.active {
-        display: flex;
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+        border-radius: 100%;
     }
 }
