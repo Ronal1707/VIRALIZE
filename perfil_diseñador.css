@@ -1,334 +1,284 @@
 :root {
     --primary-color: #00e6d1;
-    --text-color: #faebf0;
-    --dark-bg: #040811;
-    --border-color: #2a2f3d;
+    --background-color: #040811;
+    --secondary-color: #222;
+    --text-color: white;
+    --btn-hover-color: #00d1b2;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    color: var(--text-color);
-    line-height: 1.6;
+
+    padding-top: 100px; 
     margin: 0;
-    padding: 0;
-    background-color: var(--dark-bg);
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
-
-
 
 .profile-container {
-    max-width: 1200px;
-    margin: 0 auto;
+    margin: 80px auto;
     padding: 20px;
-
-}
-
-.profile-header {
-    text-align: center;
-    margin-bottom: 30px;
-    padding: 20px 0;
-    margin-top: 70px;
 }
 
 .profile-header h1 {
-    font-size: 2rem;
-    color: var(--text-color);
-    margin-bottom: 10px;
+    margin-bottom: 0;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--primary-color);
 }
 
 .profile-header h2 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 60px;
+    font-weight: 400;
+    color: #ccc;  
 }
 
 .clients-section {
-    padding: 0 20px;
-    margin-bottom: 20px;
+    margin-top: 30px;
 }
 
 .clients-section h3 {
-    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
     border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 10px;
-    margin-top: 0;
+    padding-bottom: 8px;
 }
 
 .client-item {
+    background-color: #151c2a;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    border-radius: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--border-color);
-    flex-wrap: wrap;
-}
-
-.client-item:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
+    box-shadow: 0 0 8px rgba(0,230,209,0.3);
 }
 
 .client-info {
-    flex: 1;
-    min-width: 200px;
-    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .client-company {
-    font-weight: bold;
-    color: var(--text-color);
+    font-weight: 700;
     font-size: 1.1rem;
-    margin-bottom: 5px;
+    color: var(--primary-color);
 }
 
 .client-name {
-    color: #a0a8c0;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #ccc;
+    margin-right: 310px;
 }
 
-.client-actions {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-}
-
-.action-btn {
-    padding: 8px 15px;
+.client-actions button,
+.client-actions a button {
+    background: var(--primary-color);
     border: none;
-    border-radius: 4px;
-    font-weight: bold;
+    color: var(--background-color);
+    padding: 8px 12px;
+    margin-left: 10px;
+    border-radius: 5px;
+    font-weight: 600;
     cursor: pointer;
-    text-align: center;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 5px;
     font-size: 0.9rem;
-    white-space: nowrap;
+    transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
 }
 
-.btn-info {
-    background-color: var(--primary-color);
-    color: var(--dark-bg);
+.client-actions button i,
+.client-actions a button i {
+    margin-right: 6px;
+    font-size: 1.1rem;
 }
 
-.btn-files {
-    background-color: #4CAF50;
-    color: white;
-}
-
-.btn-chat {
-    background-color: #2196F3;
-    color: white;
-}
-
-.btn-notify {
-    background-color: #FF9800;
-    color: white;
-}
-
-.action-btn:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
+.client-actions button:hover,
+.client-actions a button:hover {
+    background-color: var(--btn-hover-color);
 }
 
 .profile-actions {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+    text-align: center;
     margin-top: 30px;
-    padding: 0 20px;
 }
 
 .profile-btn {
-    padding: 10px 20px;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 10px;
     border: none;
-    border-radius: 4px;
-    font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.btn-edit {
+    font-weight: 700;
+    color: var(--background-color);
     background-color: var(--primary-color);
-    color: var(--dark-bg);
+    transition: background-color 0.3s ease;
 }
 
-.btn-logout {
-    background-color: #f44336;
-    color: white;
+.profile-btn:hover {
+    background-color: var(--btn-hover-color);
 }
 
-.contact-section {
-    padding: 20px;
-    margin-top: 30px;
-}
-
-.contact-section h3 {
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 10px;
-    margin-top: 0;
-}
-
-.contact-info {
-    margin-top: 15px;
-}
-
-.contact-info strong {
-    display: block;
-    margin-bottom: 5px;
-    color: var(--text-color);
-}
-
-.contact-info a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-.footer {
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    color: #a0a8c0;
-    font-size: 0.9rem;
-}
-
-/* Responsive adjustments */
-@media (max-width: 767px) {
-    .profile-header h1 {
-        font-size: 1.5rem;
-    }
-    
-    .profile-header h2 {
-        font-size: 1.2rem;
-    }
-    
-    .client-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-    
-    .client-info {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-    
-    .client-actions {
-        width: 100%;
-        justify-content: flex-start;
-    }
-    
-    .profile-actions {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .profile-btn {
-        width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .client-actions {
-        flex-direction: column;
-    }
-    
-    .action-btn {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-/* ==== Overlay de carga de archivos ==== */
+/* Overlay para subir archivos */
 .overlay {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.8);
     display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.8);
     justify-content: center;
     align-items: center;
     z-index: 1000;
-  }
-  
-  .overlay-content {
-    background: #1e1e1e;
-    padding: 2rem;
-    border-radius: 10px;
-    color: white;
+}
+
+.overlay-content {
+    background: var(--secondary-color);
+    padding: 25px 30px;
+    border-radius: 8px;
+    color: var(--text-color);
     text-align: center;
-    max-width: 400px;
+    min-width: 300px;
+    max-width: 90vw;
+}
+
+#fileInput {
     width: 100%;
-  }
-  
-  /* ==== Chat flotante ==== */
-  #chatBtn {
+    margin-top: 10px;
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+}
+
+/* Caja de chat */
+.chat-box {
+    display: none;
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #0dcaf0;
-    color: white;
-    padding: 12px 15px;
-    border-radius: 50%;
-    font-size: 20px;
-    cursor: pointer;
-    z-index: 1001;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-  }
-  
-  .chat-box {
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
     width: 320px;
-    background: #1e1e1e;
-    border: 1px solid #444;
+    max-height: 450px;
+    background-color: var(--secondary-color);
     border-radius: 10px;
-    display: none;
+    box-shadow: 0 0 15px var(--primary-color);
     flex-direction: column;
-    z-index: 1002;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-  }
-  
-  .chat-header {
-    background: #292929;
-    padding: 10px;
+    z-index: 1100;
+    overflow: hidden;
+}
+
+.chat-header {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 12px 18px;
     display: flex;
     justify-content: space-between;
-    color: white;
-    font-weight: bold;
-    border-bottom: 1px solid #444;
-  }
-  
-  .chat-header button {
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.chat-header button {
     background: transparent;
     border: none;
-    color: white;
-    font-size: 16px;
+    font-size: 1.4rem;
     cursor: pointer;
-  }
-  
-  .chat-messages {
-    padding: 10px;
-    height: 200px;
+    color: var(--background-color);
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 12px 18px;
     overflow-y: auto;
-    color: white;
-    font-size: 14px;
-  }
-  
-  .chat-box input {
-    padding: 10px;
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+.chat-messages p {
+    margin: 8px 0;
+}
+
+.chat-box input[type="text"] {
     border: none;
-    border-top: 1px solid #444;
-    background-color: #2a2a2a;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border-top: 1px solid #333;
+    background: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.chat-box input[type="text"]::placeholder {
+    color: #999;
+}
+
+.chat-box input[type="text"]:focus {
+    outline: none;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .profile-container {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+
+    .client-actions button,
+    .client-actions a button {
+        margin-left: 5px;
+        padding: 6px 8px;
+        font-size: 0.85rem;
+    }
+
+    .chat-box {
+        width: 95vw;
+        bottom: 10px;
+        right: 2.5vw;
+    }
+}
+
+
+/* Botón Cerrar Sesión */
+.btn-logout {
+    background-color: red;
     color: white;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilos individuales por botón */
+
+.btn-files {
+    background-color: #6aff8c !important;
+    color: white !important;
+}
+
+.btn-chat {
+    background-color: #007bff !important;
+    color: white !important;
+}
+
+.btn-notify {
+    background-color: #ff9b49 !important;
+    color: white !important;
+}
+
+/* Hover opcional para mejor UX */
+.btn-files:hover {
+    background-color: #003f0e !important;
+}
+
+.btn-chat:hover {
+    background-color: #001b38 !important;
+}
+
+.btn-notify:hover {
+    background-color: #853c00 !important;
+}
+
+.btn-logout:hover {
+    background-color: rgb(60, 0, 0) !important;
+}

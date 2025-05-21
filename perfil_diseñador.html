@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Perfil del Diseñador | Viralize</title>
-    <link rel="stylesheet" href="perfil_diseñador.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="perfil_diseñador.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 <body>
     <div id="header-container"></div>
@@ -17,7 +17,7 @@
         })
         .catch(error => console.error("Error al cargar el header:", error));
     </script>
-    
+
     <div class="profile-container">
         <div class="profile-header">
             <h1>Hola, [Nombre del diseñador]</h1>
@@ -27,6 +27,7 @@
         <div class="clients-section">
             <h3>Clientes</h3>
             
+            <!-- Cliente 1 -->
             <div class="client-item">
                 <div class="client-info">
                     <div class="client-company">NOMBRE EMPRESA 1</div>
@@ -41,7 +42,7 @@
                     <button class="action-btn btn-files">
                         <i class="fas fa-folder-open"></i> ARCHIVOS
                     </button>
-                    <button class="action-btn btn-chat" id="chatBtn">
+                    <button class="action-btn btn-chat">
                         <i class="fas fa-comments"></i> CHAT
                     </button>
                     <button class="action-btn btn-notify">
@@ -49,7 +50,8 @@
                     </button>
                 </div>
             </div>
-            
+
+            <!-- Cliente 2 -->
             <div class="client-item">
                 <div class="client-info">
                     <div class="client-company">NOMBRE EMPRESA 2</div>
@@ -64,7 +66,7 @@
                     <button class="action-btn btn-files">
                         <i class="fas fa-folder-open"></i> ARCHIVOS
                     </button>
-                    <button class="action-btn btn-chat" id="chatBtn">
+                    <button class="action-btn btn-chat">
                         <i class="fas fa-comments"></i> CHAT
                     </button>
                     <button class="action-btn btn-notify">
@@ -72,7 +74,8 @@
                     </button>
                 </div>
             </div>
-            
+
+                        <!-- Cliente 3 -->
             <div class="client-item">
                 <div class="client-info">
                     <div class="client-company">NOMBRE EMPRESA 3</div>
@@ -87,7 +90,7 @@
                     <button class="action-btn btn-files">
                         <i class="fas fa-folder-open"></i> ARCHIVOS
                     </button>
-                    <button class="action-btn btn-chat" id="chatBtn">
+                    <button class="action-btn btn-chat">
                         <i class="fas fa-comments"></i> CHAT
                     </button>
                     <button class="action-btn btn-notify">
@@ -95,7 +98,8 @@
                     </button>
                 </div>
             </div>
-            
+
+            <!-- Cliente 4 -->
             <div class="client-item">
                 <div class="client-info">
                     <div class="client-company">NOMBRE EMPRESA 4</div>
@@ -110,7 +114,7 @@
                     <button class="action-btn btn-files">
                         <i class="fas fa-folder-open"></i> ARCHIVOS
                     </button>
-                    <button class="action-btn btn-chat" id="chatBtn">
+                    <button class="action-btn btn-chat">
                         <i class="fas fa-comments"></i> CHAT
                     </button>
                     <button class="action-btn btn-notify">
@@ -118,101 +122,120 @@
                     </button>
                 </div>
             </div>
+
         </div>
         
         <div class="profile-actions">
-            
             <a href="index.html"><button class="profile-btn btn-logout">CERRAR SESIÓN</button></a>
-            
-        </div>
-
-
-    
-    <!-- Overlay de carga de archivos -->
-    <div class="overlay" id="fileOverlay">
-        <div class="overlay-content">
-        <h3>Subir Archivos</h3>
-        <input type="file" id="fileInput" multiple><br><br>
-        <button onclick="subirArchivos()" style="padding: 10px 15px; background: #28a745; color: white; border: none; border-radius: 5px; margin-right: 10px;">Subir</button>
-        <button onclick="cerrarOverlay()" style="padding: 10px 15px; background: #dc3545; color: white; border: none; border-radius: 5px;">Cerrar</button>
         </div>
     </div>
-    
+
+    <!-- Overlay para subir archivos -->
+    <div class="overlay" id="fileOverlay">
+        <div class="overlay-content">
+            <h3>Subir Archivos</h3>
+            <input type="file" id="fileInput" multiple /><br /><br />
+            <button id="uploadBtn">Subir</button>
+            <button onclick="cerrarOverlay()">Cerrar</button>
+        </div>
+    </div>
 
     <!-- Caja del chat -->
     <div class="chat-box" id="chatBox">
         <div class="chat-header">
-        Chat con el Diseñador
-        <button onclick="cerrarChat()">&times;</button>
+            <span id="chatWith">Chat con Cliente</span>
+            <button onclick="cerrarChat()">&times;</button>
         </div>
         <div class="chat-messages" id="chatMessages">
-        <p><strong>Diseñador:</strong> ¡Hola! ¿En qué puedo ayudarte?</p>
+            <p><strong>Diseñador:</strong> ¡Hola! ¿En qué puedo ayudarte?</p>
         </div>
-        <input type="text" placeholder="Escribe un mensaje..." onkeydown="enviarMensaje(event)">
+        <input type="text" placeholder="Escribe un mensaje..." onkeydown="enviarMensaje(event)" />
     </div>
 
     <script>
-        // Overlay
-        document.querySelector(".btn-files").addEventListener("click", () => {
-            document.getElementById("fileOverlay").style.display = "flex";
+      let currentClient = null;
+
+      document.querySelectorAll(".btn-files").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          currentClient = btn.closest(".client-item").querySelector(".client-company").textContent;
+          document.getElementById("fileOverlay").style.display = "flex";
+          document.getElementById("uploadBtn").focus();
         });
+      });
 
-        function cerrarOverlay() {
-            document.getElementById("fileOverlay").style.display = "none";
+      function cerrarOverlay() {
+        document.getElementById("fileOverlay").style.display = "none";
+        document.getElementById("fileInput").value = "";
+      }
+
+      document.getElementById("uploadBtn").addEventListener("click", () => {
+        const input = document.getElementById("fileInput");
+        const archivos = input.files;
+
+        if (archivos.length === 0) {
+          alert("Por favor selecciona al menos un archivo.");
+          return;
         }
 
-        // Chat
-        const chatBtn = document.getElementById("chatBtn");
-        const chatBox = document.getElementById("chatBox");
+        let mensaje = `Has subido ${archivos.length} archivo(s) para "${currentClient}":\n`;
+        for (let i = 0; i < archivos.length; i++) {
+          mensaje += `- ${archivos[i].name}\n`;
+        }
 
-        chatBtn.addEventListener("click", () => {
-            chatBox.style.display = "flex";
+        alert(mensaje);
+        cerrarOverlay();
+      });
+
+      // Chat
+      const chatBox = document.getElementById("chatBox");
+      const chatWith = document.getElementById("chatWith");
+      const chatMessages = document.getElementById("chatMessages");
+
+      document.querySelectorAll(".btn-chat").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          currentClient = btn.closest(".client-item").querySelector(".client-company").textContent;
+          chatWith.textContent = `Chat con ${currentClient}`;
+          chatMessages.innerHTML = `<p><strong>Diseñador:</strong> ¡Hola! ¿En qué puedo ayudarte?</p>`;
+          chatBox.style.display = "flex";
         });
+      });
 
-        function subirArchivos() {
-            const input = document.getElementById("fileInput");
-            const archivos = input.files;
+      function cerrarChat() {
+        chatBox.style.display = "none";
+      }
 
-            if (archivos.length === 0) {
-                alert("Por favor selecciona al menos un archivo.");
-                return;
-            }
+      function enviarMensaje(event) {
+        if (event.key === "Enter") {
+          const input = event.target;
+          const texto = input.value.trim();
+          if (texto === "") return;
 
-            let mensaje = `Subiste ${archivos.length} archivo(s):\n`;
-            for (let i = 0; i < archivos.length; i++) {
-                mensaje += `- ${archivos[i].name}\n`;
-            }
+          const nuevoMensaje = document.createElement("p");
+          nuevoMensaje.innerHTML = `<strong>Tú:</strong> ${texto}`;
+          chatMessages.appendChild(nuevoMensaje);
+          chatMessages.scrollTop = chatMessages.scrollHeight;
 
-            alert(mensaje);
-            cerrarOverlay();
+          input.value = "";
+
+          setTimeout(() => {
+            const respuesta = document.createElement("p");
+            respuesta.innerHTML = `<strong>${currentClient}:</strong> Gracias por tu mensaje, te responderé pronto.`;
+            chatMessages.appendChild(respuesta);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+          }, 1000);
         }
+      }
 
-
-        function cerrarChat() {
-            chatBox.style.display = "none";
-        }
-
-        function enviarMensaje(event) {
-            if (event.key === "Enter") {
-            const input = event.target;
-            const msg = input.value.trim();
-            if (msg !== "") {
-                const chatMessages = document.getElementById("chatMessages");
-                const nuevoMensaje = document.createElement("p");
-                nuevoMensaje.innerHTML = `<strong>Tú:</strong> ${msg}`;
-                chatMessages.appendChild(nuevoMensaje);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-                input.value = "";
-            }
-            }
-        }
-
-        fetch("Footer.html")
-          .then(response => response.text())
-          .then(data => {
-            document.getElementById("footer-container").innerHTML = data;
-          })
-          .catch(error => console.error("Error al cargar el footer:", error));
+      // Cargar footer
+      fetch("Footer.html")
+        .then(response => response.text())
+        .then(data => {
+          const footerContainer = document.createElement('div');
+          footerContainer.id = "footer-container";
+          footerContainer.innerHTML = data;
+          document.body.appendChild(footerContainer);
+        })
+        .catch(error => console.error("Error al cargar el footer:", error));
     </script>
 </body>
 </html>
