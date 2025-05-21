@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información de la Empresa</title>
+    <link rel="stylesheet" href="info_empresa.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <script>
+      fetch("Header_sesion_iniciada.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("header-container").innerHTML = data;
+        })
+        .catch(error => console.error("Error al cargar el header:", error));
+    </script>
+
+    <h1>Resumen del Briefing de Marca</h1>
+
+    <div class="info-section">
+        <h2>1. Esencia de la Marca</h2>
+        <p><strong>Palabras clave:</strong> Innovación, Confianza, Sostenibilidad</p>
+        <p><strong>Diferencial:</strong> Ofrecemos soluciones ecológicas y accesibles.</p>
+        <p><strong>Emoción:</strong> Confianza</p>
+    </div>
+
+    <div class="info-section">
+        <h2>2. Público Objetivo</h2>
+        <p><strong>¿A quién quieres llegar?</strong> Jóvenes emprendedores, eco-consumidores</p>
+        <p><strong>¿Cómo quieres que te perciban?</strong> Accesible, Profesional</p>
+    </div>
+
+    <div class="info-section">
+        <h2>3. Elementos Visuales</h2>
+        <p><strong>Elementos actuales:</strong> Tipografía simple, colores tierra</p>
+        <p><strong>Referencias:</strong> Patagonia, IKEA</p>
+    </div>
+
+    <div class="info-section">
+        <h2>4. Aplicaciones Prácticas</h2>
+        <p><strong>Usos principales:</strong> Redes sociales, sitio web, empaques</p>
+        <p><strong>Variantes necesarias:</strong> Logo monocromático para impresiones</p>
+    </div>
+
+    <div class="info-section">
+        <h2>5. Competencia</h2>
+        <p><strong>Marca 1:</strong> EcoBrand</p>
+        <p><strong>Marca 2:</strong> VerdeActivo</p>
+        <p><strong>Análisis:</strong> Buen branding pero falta autenticidad en redes</p>
+    </div>
+
+    <div class="info-section">
+        <h2>Bonus Creativo</h2>
+        <p><strong>Metáfora:</strong> Un búho azul: sabiduría y confianza</p>
+    </div>
+
+    <a href="perfil_diseñador.html" class="btn-regresar">Regresar</a>
+
+    <script>
+        // Cargar footer
+      fetch("Footer.html")
+        .then(response => response.text())
+        .then(data => {
+          const footerContainer = document.createElement('div');
+          footerContainer.id = "footer-container";
+          footerContainer.innerHTML = data;
+          document.body.appendChild(footerContainer);
+        })
+        .catch(error => console.error("Error al cargar el footer:", error));
+    </script>
+</body>
+</html>
