@@ -138,8 +138,8 @@
         </script>
 
         <script>
-    // Espera a que se cargue el header con fetch
-    window.addEventListener("DOMContentLoaded", () => {
+             // Espera a que se cargue el header con fetch
+        window.addEventListener("DOMContentLoaded", () => {
         const observer = new MutationObserver(() => {
             const menuToggle = document.getElementById('mobile-menu');
             const menu = document.getElementById('menu');
@@ -154,8 +154,8 @@
         });
 
         observer.observe(document.body, { childList: true, subtree: true });
-    });
-</script>
+         });
+        </script>
 
 
     </body>
