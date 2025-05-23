@@ -45,11 +45,18 @@ strong {
     z-index: 1000;
 }
 
-.btn-regresar {
-    display: block;
-    margin: 30px auto;
+/* Contenedor para ambos botones */
+.botones-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* espacio entre botones */
+    margin-top: 30px;
+}
+
+/* Estilo base para ambos botones */
+.btn-regresar,
+.btn-archivos {
     padding: 10px 20px;
-    background-color: #4bb34e;
     color: white;
     text-align: center;
     text-decoration: none;
@@ -60,6 +67,20 @@ strong {
     transition: background-color 0.3s ease;
 }
 
+/* Estilo específico para el botón Regresar */
+.btn-regresar {
+    background-color: #4bb34e;
+}
+
 .btn-regresar:hover {
     background-color: #0c5f11;
+}
+
+/* Estilo específico para el botón Archivos */
+.btn-archivos {
+    background-color: #1e90ff;
+}
+
+.btn-archivos:hover {
+    background-color: #0b62c4;
 }

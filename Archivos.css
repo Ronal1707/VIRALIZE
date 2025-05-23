@@ -1,0 +1,57 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #222;
+    color: #fff;
+    padding-top: 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+h1 {
+    color: #00e6d1;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 100px;
+}
+
+.lista-archivos {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto 40px auto;
+    max-width: 600px;
+}
+
+.lista-archivos li {
+    background-color: #060025;
+    padding: 12px 20px;
+    border-left: 4px solid #00e6d1;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.btn-regresar {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #4bb34e;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-regresar:hover {
+    background-color: #0c5f11;
+}

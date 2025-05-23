@@ -260,11 +260,6 @@ body {
     color: white !important;
 }
 
-.btn-notify {
-    background-color: #ff9b49 !important;
-    color: white !important;
-}
-
 /* Hover opcional para mejor UX */
 .btn-files:hover {
     background-color: #003f0e !important;
@@ -272,10 +267,6 @@ body {
 
 .btn-chat:hover {
     background-color: #001b38 !important;
-}
-
-.btn-notify:hover {
-    background-color: #853c00 !important;
 }
 
 .btn-logout:hover {
