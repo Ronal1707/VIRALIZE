@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Briefing de Marca</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #ffffff;
+            background-color: #000000;
+            padding-top: 100px;
+        }
+        h1 {
+            color: #00e6d1;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-section {
+            background-color: #060025;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #00e6d1;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #6b6b6b;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            background-color: #1c1c1c;
+            color: #ffffff;
+        }
+        textarea {
+            min-height: 80px;
+        }
+        .note {
+            font-size: 14px;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .volver-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .volver-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Ejemplo de Briefing para Manual de Marca</h1>
+
+<div class="form-section">
+    <h2>1. Esencia de la Marca</h2>
+    <label>¿Qué 3 palabras definen tu marca?</label>
+    <input type="text" value="Innovación, Cercanía, Transparencia" readonly>
+
+    <label>¿Qué hace única a tu marca?</label>
+    <textarea readonly>Nos diferenciamos por ofrecer soluciones tecnológicas accesibles para pequeños negocios, con un enfoque humano y personalizado.</textarea>
+
+    <label>¿Qué emoción debe transmitir?</label>
+    <input type="text" value="Confianza, Motivación, Modernidad" readonly>
+</div>
+
+<div class="form-section">
+    <h2>2. Público Objetivo</h2>
+    <label>¿A quién quieres llegar?</label>
+    <textarea readonly>Emprendedores de 25 a 40 años, con interés en tecnología, desarrollo personal y gestión empresarial. Suelen estar activos en redes sociales y valoran la innovación.</textarea>
+
+    <label>¿Cómo quieres que te perciban?</label>
+    <input type="text" value="Profesional, Accesible, Creativa" readonly>
+</div>
+
+<div class="form-section">
+    <h2>3. Elementos Visuales</h2>
+    <label>Sube tus archivos actuales</label>
+    <div class="note">[Ejemplo: logo_actual.png, estilo_colores.pdf, etc.]</div>
+
+    <label>Describe tus elementos actuales</label>
+    <textarea readonly>El logo actual es demasiado complejo para tamaños pequeños. Me gusta la paleta de colores, pero quiero modernizarla.</textarea>
+
+    <label>Ejemplos de marcas que te inspiren</label>
+    <textarea readonly>Me gusta el estilo limpio y directo de Notion y la identidad visual de Mailchimp por su tono amigable.</textarea>
+</div>
+
+<div class="form-section">
+    <h2>4. Aplicaciones Prácticas</h2>
+    <label>¿Dónde se usará principalmente la marca?</label>
+    <textarea readonly>Instagram, LinkedIn, página web, presentaciones corporativas, tarjetas de presentación y material de empaque.</textarea>
+
+    <label>¿Necesitas variantes del logo?</label>
+    <input type="text" value="Sí, versiones horizontales, verticales y favicon para apps y redes." readonly>
+</div>
+
+<div class="form-section">
+    <h2>5. Competencia</h2>
+    <label>Marca competidora #1</label>
+    <input type="text" value="Asana" readonly>
+
+    <label>Marca competidora #2</label>
+    <input type="text" value="Trello" readonly>
+
+    <label>Análisis de competencia</label>
+    <textarea readonly>Asana tiene una imagen limpia y profesional, pero puede parecer fría. Trello tiene un diseño amigable, pero le falta identidad visual única.</textarea>
+</div>
+
+<div class="form-section">
+    <h2>Bonus Creativo</h2>
+    <label>Si tu marca fuera un animal/color/música...</label>
+    <textarea readonly>Un zorro por su inteligencia ágil, color verde por crecimiento y esperanza, y música jazz para evocar concentración y cercania.</textarea>
+    <p class="note">Esta pregunta nos ayuda a entender la personalidad de tu marca de forma creativa.</p>
+</div>
+
+<div class="button-container">
+    <a href="perfil_usuario.html" class="volver-button">Volver</a>
+</div>
+
+</body>
+</html>

@@ -30,13 +30,11 @@
                     <div class="client-name">NOMBRE CLIENTE</div>
                 </div>
                 <div class="client-actions">
-
                     <a href="Elección.html">
                         <button class="action-btn btn-info">
                             <i class="fas fa-info-circle"></i> INFO EMPRESA
                         </button>
                     </a>
-                    
                     <button class="action-btn btn-files">
                         <i class="fas fa-folder-open"></i> ARCHIVOS
                     </button>
@@ -48,9 +46,15 @@
         </div>
         
         <div class="profile-actions">
-            
-            <a href="index.html"><button class="profile-btn btn-logout">CERRAR SESIÓN</button></a>
-            
+            <a href="formulario_usuario_ejemplo.html">
+                <button class="profile-btn btn-edit">CARGAR FORMULARIO PRUEBA</button>
+            </a>
+            <a href="archivo_ejemplo.html">
+                <button class="profile-btn btn-edit">CARGAR ARCHIVOS DE PRUEBA</button>
+            </a>
+            <a href="index.html">
+                <button class="profile-btn btn-logout">CERRAR SESIÓN</button>
+            </a>
         </div>
         
         <div class="contact-section">
@@ -66,22 +70,21 @@
     <!-- Overlay de carga de archivos -->
     <div class="overlay" id="fileOverlay">
         <div class="overlay-content">
-        <h3>Subir Archivos</h3>
-        <input type="file" id="fileInput" multiple><br><br>
-        <button onclick="subirArchivos()" style="padding: 10px 15px; background: #28a745; color: white; border: none; border-radius: 5px; margin-right: 10px;">Subir</button>
-        <button onclick="cerrarOverlay()" style="padding: 10px 15px; background: #dc3545; color: white; border: none; border-radius: 5px;">Cerrar</button>
+            <h3>Subir Archivos</h3>
+            <input type="file" id="fileInput" multiple><br><br>
+            <button onclick="subirArchivos()" style="padding: 10px 15px; background: #28a745; color: white; border: none; border-radius: 5px; margin-right: 10px;">Subir</button>
+            <button onclick="cerrarOverlay()" style="padding: 10px 15px; background: #dc3545; color: white; border: none; border-radius: 5px;">Cerrar</button>
         </div>
     </div>
     
-
     <!-- Caja del chat -->
     <div class="chat-box" id="chatBox">
         <div class="chat-header">
-        Chat con el Diseñador
-        <button onclick="cerrarChat()">&times;</button>
+            Chat con el Diseñador
+            <button onclick="cerrarChat()">&times;</button>
         </div>
         <div class="chat-messages" id="chatMessages">
-        <p><strong>Diseñador:</strong> ¡Hola! ¿En qué puedo ayudarte?</p>
+            <p><strong>Diseñador:</strong> ¡Hola! ¿En qué puedo ayudarte?</p>
         </div>
         <input type="text" placeholder="Escribe un mensaje..." onkeydown="enviarMensaje(event)">
     </div>
@@ -122,23 +125,22 @@
             cerrarOverlay();
         }
 
-
         function cerrarChat() {
             chatBox.style.display = "none";
         }
 
         function enviarMensaje(event) {
             if (event.key === "Enter") {
-            const input = event.target;
-            const msg = input.value.trim();
-            if (msg !== "") {
-                const chatMessages = document.getElementById("chatMessages");
-                const nuevoMensaje = document.createElement("p");
-                nuevoMensaje.innerHTML = `<strong>Tú:</strong> ${msg}`;
-                chatMessages.appendChild(nuevoMensaje);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-                input.value = "";
-            }
+                const input = event.target;
+                const msg = input.value.trim();
+                if (msg !== "") {
+                    const chatMessages = document.getElementById("chatMessages");
+                    const nuevoMensaje = document.createElement("p");
+                    nuevoMensaje.innerHTML = `<strong>Tú:</strong> ${msg}`;
+                    chatMessages.appendChild(nuevoMensaje);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                    input.value = "";
+                }
             }
         }
 
@@ -148,7 +150,6 @@
             document.getElementById("footer-container").innerHTML = data;
           })
           .catch(error => console.error("Error al cargar el footer:", error));
-      </script>
-  
+    </script>
 </body>
 </html>
